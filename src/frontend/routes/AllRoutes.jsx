@@ -6,6 +6,7 @@ import {
   Explore,
   History,
   Home,
+  LikedVideos,
   Login,
   Playlist,
   Signup,
@@ -20,6 +21,7 @@ function AllRoutes() {
       <Route path="/history" element={<History />} />
       <Route path="/watchlater" element={<WatchLater />} />
       <Route path="/playlist" element={<Playlist />} />
+      <Route path="/likedvideos" element={<LikedVideos />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/mockman" element={<Mockman />} />
