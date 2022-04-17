@@ -18,3 +18,10 @@ export {
   addVideoToLikedVideos,
   removeVideoFromLikedVideos,
 } from "./likedVideosUtils";
+
+export {
+  getAllHistory,
+  deleteAllHistory,
+  addVideoToHistory,
+  removeVideoFromHistory,
+} from "./historyUtils.js";
