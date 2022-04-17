@@ -1,4 +1,4 @@
-import { likeVideosActions } from "../context/constants";
+import { likedVideosActions } from "../context/constants";
 import {
   addVideoToLikedVideosService,
   getAllLikedVideosService,
@@ -7,7 +7,7 @@ import {
 
 export const getAllLikedVideos = async (token, likedVideosDispatch) => {
   try {
-    likedVideosDispatch({ type: likeVideosActions.LOADING });
+    likedVideosDispatch({ type: likedVideosActions.LOADING });
 
     const {
       data: { likes },
@@ -16,7 +16,7 @@ export const getAllLikedVideos = async (token, likedVideosDispatch) => {
 
     if (status >= 200 && status < 300) {
       likedVideosDispatch({
-        type: likeVideosActions.GET_ALL_LIKED_VIDEOS,
+        type: likedVideosActions.GET_ALL_LIKED_VIDEOS,
         payload: likes,
       });
 
@@ -24,7 +24,7 @@ export const getAllLikedVideos = async (token, likedVideosDispatch) => {
     }
   } catch (error) {
     likedVideosDispatch({
-      type: likeVideosActions.ERROR,
+      type: likedVideosActions.ERROR,
       payload: error,
     });
   }
@@ -36,7 +36,7 @@ export const addVideoToLikedVideos = async (
   likedVideosDispatch
 ) => {
   try {
-    likedVideosDispatch({ type: likeVideosActions.LOADING });
+    likedVideosDispatch({ type: likedVideosActions.LOADING });
 
     const {
       data: { likes },
@@ -45,7 +45,7 @@ export const addVideoToLikedVideos = async (
 
     if (status >= 200 && status < 300) {
       likedVideosDispatch({
-        type: likeVideosActions.ADD_VIDEO_TO_LIKED_VIDEOS,
+        type: likedVideosActions.ADD_VIDEO_TO_LIKED_VIDEOS,
         payload: likes,
       });
 
@@ -53,7 +53,7 @@ export const addVideoToLikedVideos = async (
     }
   } catch (error) {
     likedVideosDispatch({
-      type: likeVideosActions.ERROR,
+      type: likedVideosActions.ERROR,
       payload: error,
     });
   }
@@ -65,7 +65,7 @@ export const removeVideoFromLikedVideos = async (
   likedVideosDispatch
 ) => {
   try {
-    likedVideosDispatch({ type: likeVideosActions.LOADING });
+    likedVideosDispatch({ type: likedVideosActions.LOADING });
 
     const {
       data: { likes },
@@ -74,13 +74,13 @@ export const removeVideoFromLikedVideos = async (
 
     if (status >= 200 && status < 300) {
       likedVideosDispatch({
-        type: likeVideosActions.REMOVE_VIDEO_FROM_LIKED_VIDEOS,
+        type: likedVideosActions.REMOVE_VIDEO_FROM_LIKED_VIDEOS,
         payload: likes,
       });
     }
   } catch (error) {
     likedVideosDispatch({
-      type: likeVideosActions.ERROR,
+      type: likedVideosActions.ERROR,
       payload: error,
     });
   }

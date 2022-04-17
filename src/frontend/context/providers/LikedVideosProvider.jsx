@@ -1,6 +1,6 @@
 import { useReducer, useContext, createContext, useEffect } from "react";
 import { getAllLikedVideos } from "../../utils";
-import { likedVideosReducer } from "../reducer";
+import { likedVideosReducer } from "../reducers";
 
 const LikedVideosContext = createContext();
 
@@ -17,7 +17,7 @@ export const LikedVideosProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    let encodedToken = localStorage.getItem("mediaHive_JWT_Token");
+    let encodedToken = localStorage.getItem("fusionTV_JWT_Token");
 
     if (encodedToken) {
       getAllLikedVideos(encodedToken, likedVideosDispatch);
