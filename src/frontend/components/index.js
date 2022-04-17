@@ -11,6 +11,7 @@ export { default as AddToPlaylistForm } from "./explore/AddToPlaylistForm";
 export { default as FilterVideosDropdown } from "./explore/FilterVideosDropdown";
 export { default as PlaylistList } from "./explore/PlaylistList";
 export { default as PlaylistListItem } from "./explore/PlaylistListItem";
+export { default as VideoDisplayCard } from "./explore/VideoDisplayCard";
 export { default as Input } from "./global/Input";
 export { default as TextArea } from "./global/TextArea";
 export { default as Modal } from "./global/Modal";

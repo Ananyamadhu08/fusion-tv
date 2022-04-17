@@ -40,7 +40,7 @@ const VideoDisplayCard = ({ video }) => {
           <div className="videoCard__actions flex justify-between mt-4">
             <i
               onClick={() => setShowModal(true)}
-              className="text-2xl text-hover-amber-500 cursor-pointer fa-solid fa-circle-plus"
+              className="text-2xl text-hover-rose-300 text-rose-600 cursor-pointer fa-solid fa-circle-plus"
             ></i>
             <div>
               {/* {isInWatchLater ? (
@@ -74,7 +74,7 @@ const VideoDisplayCard = ({ video }) => {
                 //       watchLaterDispatch
                 //     )
                 //   }
-                className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-clock"
+                className="text-2xl text-hover-rose-300 text-rose-600 cursor-pointer  mr-3 fa-solid fa-clock"
               ></i>
               {/* {isInLikedVideos ? (
                 <i
@@ -107,7 +107,7 @@ const VideoDisplayCard = ({ video }) => {
                 //       likedVideosDispatch
                 //     )
                 //   }
-                className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                className="text-2xl text-hover-rose-300 text-rose-600 text-white cursor-pointer  mr-3 fa-solid fa-heart"
               ></i>
             </div>
           </div>

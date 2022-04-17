@@ -6,7 +6,7 @@ const FilterVideoDropdown = () => {
   return (
     <div className="custom-select">
       <select
-        className="bg-amber-600 text-white text-xl"
+        className="bg-rose-700 text-white text-xl"
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
       >

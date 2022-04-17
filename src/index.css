@@ -20,3 +20,6 @@ code {
 
 /* ---------------- AUTH PAGE ------------ */
 @import url("./frontend/styles/authPage.css");
+
+/* ---------------- EXPLORE PAGE ------------ */
+@import url("./frontend/styles/explorePage.css");

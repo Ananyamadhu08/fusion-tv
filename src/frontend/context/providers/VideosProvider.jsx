@@ -1,6 +1,6 @@
 import { useContext, createContext, useReducer, useEffect } from "react";
 import { getVideos } from "../../utils";
-import { videosReducer } from "../reducer";
+import { videosReducer } from "../reducers";
 
 const VideosContext = createContext();
 
