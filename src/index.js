@@ -8,6 +8,7 @@ import {
   AuthProvider,
   CategoryProvider,
   FiltersProvider,
+  PlaylistProvider,
   VideosProvider,
 } from "./frontend/context/providers";
 
@@ -21,7 +22,9 @@ ReactDOM.render(
         <AuthProvider>
           <VideosProvider>
             <FiltersProvider>
-              <App />
+              <PlaylistProvider>
+                <App />
+              </PlaylistProvider>
             </FiltersProvider>
           </VideosProvider>
         </AuthProvider>
