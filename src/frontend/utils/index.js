@@ -8,3 +8,8 @@ export {
   removeVideoFromPlaylist,
   deletePlaylist,
 } from "./playlistUtils";
+export {
+  getAllWatchLaterVideos,
+  addVideoToWatchLater,
+  removeVideoToWatchLater,
+} from "./watchLaterUtils";
