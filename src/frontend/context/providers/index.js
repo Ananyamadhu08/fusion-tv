@@ -3,3 +3,4 @@ export { AuthProvider, useAuth } from "./AuthProvider";
 export { VideosProvider, useVideos } from "./VideosProvider";
 export { FiltersProvider, useFilters } from "./FilterProvider";
 export { PlaylistProvider, usePlaylist } from "./PlaylistProvider";
+export { watchLaterProvider, useWatchLater } from "./WatchLaterProvider";
