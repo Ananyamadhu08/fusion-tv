@@ -22,20 +22,20 @@ const VideoDisplayCard = ({ video }) => {
     <>
       <div className="videoCard">
         <Link to={`/explore/${video._id}`} className="videoCard__hero__img">
-          <i className="absolute text-6xl text-amber-500 cursor-pointer fa-solid fa-play"></i>
+          <i className="absolute text-6xl text-rose-500 cursor-pointer fa-solid fa-play"></i>
           <img src={video.img} alt="" />
         </Link>
         <div className="videoCard__body">
-          <h3 className="mb-2">{video.title}</h3>
+          <h3 className="mb-2 text-white">{video.title}</h3>
           <div className="flex align-items-center mb-2">
             <img
               className="rounded-full h-10 w-10"
               src={categoryImage ? categoryImage : ""}
               alt="category-img"
             />
-            <h4 className="text-amber-500"> {video.category} </h4>
+            <h4 className="text-rose-500"> {video.category} </h4>
           </div>
-          <p> {video.desc} </p>
+          <p className="text-white"> {video.desc} </p>
 
           <div className="videoCard__actions flex justify-between mt-4">
             <i
