@@ -1,5 +1,6 @@
 import React from "react";
-import { useCategory } from "../../context/providers/CategoryProvider";
+import { useCategory } from "../../context/providers";
+
 import CategoryCard from "./CategoryCard";
 
 const FeaturedCategories = () => {
