@@ -2,7 +2,7 @@ import React from "react";
 
 const CategoryCard = ({ category }) => {
   return (
-    <div className="categoryCard">
+    <div className="categoryCard bg-slate-900">
       <img src={category.categoryImg} alt={category.categoryName} />
       <video autoPlay={true} loop={true} playsInline={true}>
         <source src={category.categoryVideo} type="video/mp4" />

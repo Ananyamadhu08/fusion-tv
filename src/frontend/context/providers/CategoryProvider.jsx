@@ -1,4 +1,5 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
+import { getCategories } from "../../utils";
 import { categoryReducer } from "../reducers";
 
 const CategoryContext = createContext();
@@ -14,6 +15,10 @@ export const CategoryProvider = ({ children }) => {
     categoryReducer,
     intialCategoryState
   );
+
+  useEffect(() => {
+    getCategories(categoryDispatch);
+  }, []);
 
   return (
     <CategoryContext.Provider value={{ categoryState, categoryDispatch }}>
