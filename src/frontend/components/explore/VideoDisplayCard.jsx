@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth, useCategory } from "../../context/providers";
+import { useAuth, useCategory, useWatchLater } from "../../context/providers";
 import { getCategoryImg } from "../../helpers";
+import { addVideoToWatchLater, removeVideoToWatchLater } from "../../utils";
 import Modal from "../global/Modal";
 import AddToPlaylist from "./AddToPlaylist";
 
@@ -16,11 +17,18 @@ const VideoDisplayCard = ({ video }) => {
     categoryState: { categories },
   } = useCategory();
 
+  const {
+    watchLaterState: { watchLater },
+    watchLaterDispatch,
+  } = useWatchLater();
+
+  let isInWatchlater = watchLater.find((item) => item._id === video._id);
+
   const categoryImage = getCategoryImg(video.category, categories);
 
   return (
     <>
-      <div className="videoCard">
+      <div className="videoCard bg-slate-900">
         <Link to={`/explore/${video._id}`} className="videoCard__hero__img">
           <i className="absolute text-6xl text-rose-500 cursor-pointer fa-solid fa-play"></i>
           <img src={video.img} alt="" />
@@ -40,75 +48,56 @@ const VideoDisplayCard = ({ video }) => {
           <div className="videoCard__actions flex justify-between mt-4">
             <i
               onClick={() => setShowModal(true)}
-              className="text-2xl text-hover-rose-300 text-rose-600 cursor-pointer fa-solid fa-circle-plus"
+              className="text-2xl text-hover-rose-300 text-white cursor-pointer fa-solid fa-circle-plus"
             ></i>
             <div>
-              {/* {isInWatchLater ? (
+              {isInWatchlater ? (
                 <i
-                  //   onClick={() =>
-                  //     removeVideoToWatchLater(
-                  //       encodedToken,
-                  //       video._id,
-                  //       watchLaterDispatch
-                  //     )
-                  //   }
-                  className="text-2xl text-amber-500  cursor-pointer  mr-3 fa-solid fa-clock"
+                  onClick={() =>
+                    removeVideoToWatchLater(
+                      encodedToken,
+                      video._id,
+                      watchLaterDispatch
+                    )
+                  }
+                  className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
               ) : (
                 <i
-                  //   onClick={() =>
-                  //     addVideoToWatchLater(
-                  //       encodedToken,
-                  //       video,
-                  //       watchLaterDispatch
-                  //     )
-                  //   }
-                  className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-clock"
+                  onClick={() =>
+                    addVideoToWatchLater(
+                      encodedToken,
+                      video,
+                      watchLaterDispatch
+                    )
+                  }
+                  className="text-2xl text-white text-hover-rose-500 cursor-pointer   mr-3 fa-solid fa-clock"
                 ></i>
-              )} */}
-              <i
-                //   onClick={() =>
-                //     addVideoToWatchLater(
-                //       encodedToken,
-                //       video,
-                //       watchLaterDispatch
-                //     )
-                //   }
-                className="text-2xl text-hover-rose-300 text-rose-600 cursor-pointer  mr-3 fa-solid fa-clock"
-              ></i>
+              )}
+
               {/* {isInLikedVideos ? (
                 <i
-                  //   onClick={() =>
-                  //     removeVideoFromLikedVideos(
-                  //       encodedToken,
-                  //       video._id,
-                  //       likedVideosDispatch
-                  //     )
-                  //   }
+                  onClick={() =>
+                    removeVideoFromLikedVideos(
+                      encodedToken,
+                      video._id,
+                      likedVideosDispatch
+                    )
+                  }
                   className="text-2xl text-amber-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>
               ) : (
                 <i
-                  //   onClick={() =>
-                  //     addVideoToLikedVideos(
-                  //       encodedToken,
-                  //       video,
-                  //       likedVideosDispatch
-                  //     )
-                  //   }
+                  onClick={() =>
+                    addVideoToLikedVideos(
+                      encodedToken,
+                      video,
+                      likedVideosDispatch
+                    )
+                  }
                   className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>
               )} */}
-              <i
-                //   onClick={() =>
-                //     addVideoToLikedVideos(
-                //       encodedToken,
-                //       video,
-                //       likedVideosDispatch
-                //     )
-                //   }
-                className="text-2xl text-hover-rose-300 text-rose-600 text-white cursor-pointer  mr-3 fa-solid fa-heart"
-              ></i>
             </div>
           </div>
         </div>
