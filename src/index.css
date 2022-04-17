@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* ---------------- HEADER ------------ */
+@import url("./frontend/styles/header.css");
+
+/* ---------------- HOME PAGE ------------ */
+@import url("./frontend/styles/homePage.css");
