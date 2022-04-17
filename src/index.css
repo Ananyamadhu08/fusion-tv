@@ -17,3 +17,6 @@ code {
 
 /* ---------------- HOME PAGE ------------ */
 @import url("./frontend/styles/homePage.css");
+
+/* ---------------- AUTH PAGE ------------ */
+@import url("./frontend/styles/authPage.css");
