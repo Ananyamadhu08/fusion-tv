@@ -14,3 +14,6 @@ code {
 
 /* ---------------- HEADER ------------ */
 @import url("./frontend/styles/header.css");
+
+/* ---------------- HOME PAGE ------------ */
+@import url("./frontend/styles/homePage.css");

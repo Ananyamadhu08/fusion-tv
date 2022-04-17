@@ -1,9 +1,11 @@
 import React from "react";
+import { FeaturedCategories, HeroBanner } from "../components";
 
 const Home = () => {
   return (
-    <div>
-      <h1>HOME</h1>
+    <div className="homePage__container">
+      <HeroBanner />
+      <FeaturedCategories />
     </div>
   );
 };
