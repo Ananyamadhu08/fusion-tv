@@ -1,7 +1,13 @@
 import React from "react";
+import { LoginForm } from "../components";
 
-const Login = () => {
-  return <div>Login</div>;
-};
+function Login() {
+  return (
+    <div className="relative" style={{ bottom: "2rem" }}>
+      <LoginForm />
+      <div className="spacer-3rem"></div>
+    </div>
+  );
+}
 
 export default Login;
