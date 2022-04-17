@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth, useCategory } from "../../context/providers";
 import { getCategoryImg } from "../../helpers";
-
-import Modal from "../Modal";
+import Modal from "../global/Modal";
 import AddToPlaylist from "./AddToPlaylist";
 
 const VideoDisplayCard = ({ video }) => {

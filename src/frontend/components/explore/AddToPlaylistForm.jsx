@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-
-import Input from "../Input";
-import TextArea from "../TextArea";
+import Input from "../global/Input";
+import TextArea from "../global/TextArea";
 
 const initPlaylistState = {
   title: "",
