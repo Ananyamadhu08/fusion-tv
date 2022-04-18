@@ -17,7 +17,7 @@ export const WatchLaterProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    let encodedToken = localStorage.getItem("mediaHive_JWT_Token");
+    let encodedToken = localStorage.getItem("fusionTV_JWT_Token");
 
     if (encodedToken) {
       getAllWatchLaterVideos(encodedToken, watchLaterDispatch);

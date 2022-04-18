@@ -8,6 +8,7 @@ import {
   AuthProvider,
   CategoryProvider,
   FiltersProvider,
+  LikedVideosProvider,
   PlaylistProvider,
   VideosProvider,
   WatchLaterProvider,
@@ -25,7 +26,9 @@ ReactDOM.render(
             <FiltersProvider>
               <PlaylistProvider>
                 <WatchLaterProvider>
-                  <App />
+                  <LikedVideosProvider>
+                    <App />
+                  </LikedVideosProvider>
                 </WatchLaterProvider>
               </PlaylistProvider>
             </FiltersProvider>

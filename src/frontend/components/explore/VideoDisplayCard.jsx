@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth, useCategory, useWatchLater } from "../../context/providers";
+import {
+  useAuth,
+  useCategory,
+  useLikedVideos,
+  useWatchLater,
+} from "../../context/providers";
 import { getCategoryImg } from "../../helpers";
-import { addVideoToWatchLater, removeVideoToWatchLater } from "../../utils";
+import {
+  addVideoToLikedVideos,
+  addVideoToWatchLater,
+  removeVideoFromLikedVideos,
+  removeVideoToWatchLater,
+} from "../../utils";
 import Modal from "../global/Modal";
 import AddToPlaylist from "./AddToPlaylist";
 
@@ -22,7 +32,13 @@ const VideoDisplayCard = ({ video }) => {
     watchLaterDispatch,
   } = useWatchLater();
 
+  const {
+    likedVideosState: { likedVideos },
+    likedVideosDispatch,
+  } = useLikedVideos();
+
   let isInWatchlater = watchLater.find((item) => item._id === video._id);
+  let isInLikedVideos = likedVideos.find((item) => item._id === video._id);
 
   const categoryImage = getCategoryImg(video.category, categories);
 
@@ -75,7 +91,7 @@ const VideoDisplayCard = ({ video }) => {
                 ></i>
               )}
 
-              {/* {isInLikedVideos ? (
+              {isInLikedVideos ? (
                 <i
                   onClick={() =>
                     removeVideoFromLikedVideos(
@@ -84,7 +100,7 @@ const VideoDisplayCard = ({ video }) => {
                       likedVideosDispatch
                     )
                   }
-                  className="text-2xl text-amber-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                  className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>
               ) : (
                 <i
@@ -95,9 +111,9 @@ const VideoDisplayCard = ({ video }) => {
                       likedVideosDispatch
                     )
                   }
-                  className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                  className="text-2xl text-white text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>
-              )} */}
+              )}
             </div>
           </div>
         </div>

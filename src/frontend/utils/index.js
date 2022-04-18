@@ -1,6 +1,6 @@
 export { getCategories } from "./getCatergories";
 export { signupUser, loginUser } from "./authUtils";
-export { getVideos } from "./vidoeUtils";
+export { getVideos } from "./videoUtils";
 export {
   getAllPlaylists,
   createPlaylist,
@@ -13,3 +13,8 @@ export {
   addVideoToWatchLater,
   removeVideoToWatchLater,
 } from "./watchLaterUtils";
+export {
+  getAllLikedVideos,
+  addVideoToLikedVideos,
+  removeVideoFromLikedVideos,
+} from "./likedVideosUtils";
