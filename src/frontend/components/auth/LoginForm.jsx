@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/providers";
+import { useToast } from "../../hooks";
 import { loginUser } from "../../utils";
 
 const intUserData = {
@@ -10,15 +11,19 @@ const intUserData = {
 
 function LoginForm() {
   const navigateCallback = useNavigate();
-  const { authState, authDispatch } = useAuth();
+
+  const { authDispatch } = useAuth();
+
   const [userData, setUserData] = useState(intUserData);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     setUserData({ ...userData, [name]: value });
   };
 
-  console.log(userData);
+  const { showToast } = useToast();
+
   return (
     <main className="relative" style={{ bottom: "4rem", minHeight: "100vh" }}>
       <div className="h-screen flex justify-center">
@@ -89,7 +94,12 @@ function LoginForm() {
                 className="px-4 py-1 text-lg bg-slate-700 rounded text-white w-full bg-hover-rose-800 text-hover-rose-200"
                 onClick={(e) => {
                   e.preventDefault();
-                  loginUser(userData, authDispatch);
+                  loginUser(
+                    userData,
+                    authDispatch,
+                    navigateCallback,
+                    showToast
+                  );
                 }}
               >
                 login
@@ -110,8 +120,11 @@ function LoginForm() {
                       password: "johnDoe321",
                     },
                     authDispatch,
-                    navigateCallback
+                    navigateCallback,
+                    showToast
                   );
+
+                  setUserData(intUserData);
                 }}
               >
                 login with test credentials

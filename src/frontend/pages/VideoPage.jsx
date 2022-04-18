@@ -18,6 +18,7 @@ import {
   removeVideoToWatchLater,
 } from "../utils";
 import { AddToPlaylist, Modal } from "../components";
+import { useToast } from "../hooks";
 
 const VideoPage = () => {
   const params = useParams();
@@ -68,17 +69,8 @@ const VideoPage = () => {
   const isInLikedVideos = likedVideos.find(
     (item) => item._id === currentVideoDetails._id
   );
-  const isInHistory = history.find(
-    (item) => item._id === currentVideoDetails._id
-  );
 
-  const handleHistory = () => {
-    if (encodedToken && !isInHistory) {
-      addVideoToHistory(encodedToken, historyDispatch);
-    }
-  };
-
-  console.log(handleHistory);
+  const { showToast } = useToast();
 
   return (
     <>
@@ -96,7 +88,8 @@ const VideoPage = () => {
                   addVideoToHistory(
                     encodedToken,
                     currentVideoDetails,
-                    historyDispatch
+                    historyDispatch,
+                    showToast
                   )
                 }
               />
@@ -129,7 +122,8 @@ const VideoPage = () => {
                       removeVideoToWatchLater(
                         encodedToken,
                         currentVideoDetails._id,
-                        watchLaterDispatch
+                        watchLaterDispatch,
+                        showToast
                       )
                     }
                     className="text-2xl text-rose-500  cursor-pointer fa-solid fa-clock"
@@ -140,7 +134,8 @@ const VideoPage = () => {
                       addVideoToWatchLater(
                         encodedToken,
                         currentVideoDetails,
-                        watchLaterDispatch
+                        watchLaterDispatch,
+                        showToast
                       )
                     }
                     className="text-2xl text-hover-rose-500 cursor-pointer  fa-solid fa-clock"
@@ -152,7 +147,8 @@ const VideoPage = () => {
                       removeVideoFromLikedVideos(
                         encodedToken,
                         currentVideoDetails._id,
-                        likedVideosDispatch
+                        likedVideosDispatch,
+                        showToast
                       )
                     }
                     className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
@@ -163,7 +159,8 @@ const VideoPage = () => {
                       addVideoToLikedVideos(
                         encodedToken,
                         currentVideoDetails,
-                        likedVideosDispatch
+                        likedVideosDispatch,
+                        showToast
                       )
                     }
                     className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"

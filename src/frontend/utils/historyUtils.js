@@ -6,7 +6,7 @@ import {
   removeVideoFromHistoryService,
 } from "../services";
 
-export const getAllHistory = async (token, historyDispatch) => {
+export const getAllHistory = async (token, historyDispatch, showToast) => {
   try {
     historyDispatch({ type: historyActions.LOADING });
 
@@ -21,17 +21,19 @@ export const getAllHistory = async (token, historyDispatch) => {
         payload: history,
       });
 
-      console.log("get all history");
+      showToast("Get all history videos success!", "success");
     }
   } catch (error) {
     historyDispatch({
       type: historyActions.ERROR,
       payload: error,
     });
+
+    showToast(`${error}`, "error");
   }
 };
 
-export const deleteAllHistory = async (token, historyDispatch) => {
+export const deleteAllHistory = async (token, historyDispatch, showToast) => {
   try {
     historyDispatch({ type: historyActions.LOADING });
 
@@ -46,17 +48,24 @@ export const deleteAllHistory = async (token, historyDispatch) => {
         payload: history,
       });
 
-      console.log("delete all history");
+      showToast("Delete all history videos success!", "success");
     }
   } catch (error) {
     historyDispatch({
       type: historyActions.ERROR,
       payload: error,
     });
+
+    showToast(`${error}`, "error");
   }
 };
 
-export const addVideoToHistory = async (token, video, historyDispatch) => {
+export const addVideoToHistory = async (
+  token,
+  video,
+  historyDispatch,
+  showToast
+) => {
   try {
     historyDispatch({ type: historyActions.LOADING });
 
@@ -71,20 +80,23 @@ export const addVideoToHistory = async (token, video, historyDispatch) => {
         payload: history,
       });
 
-      console.log("added to history");
+      showToast("Added video to history success!", "success");
     }
   } catch (error) {
     historyDispatch({
       type: historyActions.ERROR,
       payload: error,
     });
+
+    showToast(`${error}`, "error");
   }
 };
 
 export const removeVideoFromHistory = async (
   token,
   videoId,
-  historyDispatch
+  historyDispatch,
+  showToast
 ) => {
   try {
     historyDispatch({ type: historyActions.LOADING });
@@ -99,11 +111,15 @@ export const removeVideoFromHistory = async (
         type: historyActions.REMOVE_VIDEO_FROM_HISTORY,
         payload: history,
       });
+
+      showToast("Remove video from history success!", "success");
     }
   } catch (error) {
     historyDispatch({
       type: historyActions.ERROR,
       payload: error,
     });
+
+    showToast(`${error}`, "error");
   }
 };

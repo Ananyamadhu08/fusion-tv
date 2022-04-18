@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { authActions } from "../../../context/constants";
 import { useAuth } from "../../../context/providers";
+import { useToast } from "../../../hooks";
 
 function HeaderRight() {
   const {
     authState: { encodedToken },
     authDispatch,
   } = useAuth();
+
+  const { showToast } = useToast();
 
   return (
     <div className="flex" style={{ gap: "1rem" }}>
@@ -22,7 +25,11 @@ function HeaderRight() {
 
       {encodedToken ? (
         <div
-          onClick={() => authDispatch({ type: authActions.LOGOUT_SUCCESS })}
+          onClick={() => {
+            authDispatch({ type: authActions.LOGOUT_SUCCESS });
+
+            showToast("Logout Success!", "success");
+          }}
           className="flex justify-items-center btn-square-solid px-3 font-bold text-xl align-items-center text-white bg-rose-600 btn-bg-hover-rose-600 mr-12"
         >
           LOGOUT

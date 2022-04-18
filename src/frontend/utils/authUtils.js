@@ -1,7 +1,12 @@
 import { authActions } from "../context/constants";
 import { loginUserService, signupUserService } from "../services";
 
-export const signupUser = async (userData, authDispatch, navigateCallback) => {
+export const signupUser = async (
+  userData,
+  authDispatch,
+  navigateCallback,
+  showToast
+) => {
   try {
     authDispatch({ type: authActions.LOADING });
 
@@ -19,16 +24,25 @@ export const signupUser = async (userData, authDispatch, navigateCallback) => {
       });
 
       navigateCallback("/");
+
+      showToast("Signup successful", "success");
     }
   } catch (error) {
     authDispatch({
       type: authActions.ERROR,
       payload: error,
     });
+
+    showToast(`${error}`, "error");
   }
 };
 
-export const loginUser = async (userData, authDispatch, navigateCallback) => {
+export const loginUser = async (
+  userData,
+  authDispatch,
+  navigateCallback,
+  showToast
+) => {
   try {
     authDispatch({ type: authActions.LOADING });
 
@@ -46,11 +60,15 @@ export const loginUser = async (userData, authDispatch, navigateCallback) => {
       });
 
       navigateCallback("/");
+
+      showToast("Login successful", "success");
     }
   } catch (error) {
     authDispatch({
       type: authActions.ERROR,
       payload: error,
     });
+
+    showToast(`${error}`, "error");
   }
 };

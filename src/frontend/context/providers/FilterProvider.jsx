@@ -21,8 +21,6 @@ export const FiltersProvider = ({ children }) => {
 
   const filteredVideos = filterVideosByCategory(videos, filtersState.filterBy);
 
-  console.log(filteredVideos);
-
   return (
     <FiltersContext.Provider
       value={{ filtersState, filtersDispatch, filteredVideos }}

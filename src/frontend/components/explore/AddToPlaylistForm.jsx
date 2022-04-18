@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth, usePlaylist } from "../../context/providers";
+import { useToast } from "../../hooks";
 import { createPlaylist } from "../../utils";
 import Input from "../global/Input";
 import TextArea from "../global/TextArea";
@@ -17,6 +18,8 @@ const AddToPlaylistForm = () => {
   const {
     authState: { encodedToken },
   } = useAuth();
+
+  const { showToast } = useToast();
 
   return (
     <div>
@@ -50,7 +53,15 @@ const AddToPlaylistForm = () => {
 
       <button
         onClick={() => {
-          createPlaylist(encodedToken, playlistDetails, playlistDispatch);
+          encodedToken
+            ? createPlaylist(
+                encodedToken,
+                playlistDetails,
+                playlistDispatch,
+                showToast
+              )
+            : showToast("Please Login", "error");
+
           setPlaylistDetails(initPlaylistState);
         }}
         className="btn bg-rose-600 shadow-lg text-white"

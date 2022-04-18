@@ -7,6 +7,7 @@ import {
   useWatchLater,
 } from "../../context/providers";
 import { getCategoryImg } from "../../helpers";
+import { useToast } from "../../hooks";
 import {
   addVideoToLikedVideos,
   addVideoToWatchLater,
@@ -36,6 +37,8 @@ const VideoDisplayCard = ({ video }) => {
     likedVideosState: { likedVideos },
     likedVideosDispatch,
   } = useLikedVideos();
+
+  const { showToast } = useToast();
 
   let isInWatchlater = watchLater.find((item) => item._id === video._id);
   let isInLikedVideos = likedVideos.find((item) => item._id === video._id);
@@ -70,22 +73,28 @@ const VideoDisplayCard = ({ video }) => {
               {isInWatchlater ? (
                 <i
                   onClick={() =>
-                    removeVideoToWatchLater(
-                      encodedToken,
-                      video._id,
-                      watchLaterDispatch
-                    )
+                    encodedToken
+                      ? removeVideoToWatchLater(
+                          encodedToken,
+                          video._id,
+                          watchLaterDispatch,
+                          showToast
+                        )
+                      : showToast("Please login first!", "error")
                   }
                   className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
               ) : (
                 <i
                   onClick={() =>
-                    addVideoToWatchLater(
-                      encodedToken,
-                      video,
-                      watchLaterDispatch
-                    )
+                    encodedToken
+                      ? addVideoToWatchLater(
+                          encodedToken,
+                          video,
+                          watchLaterDispatch,
+                          showToast
+                        )
+                      : showToast("Please login first!", "error")
                   }
                   className="text-2xl text-white text-hover-rose-500 cursor-pointer   mr-3 fa-solid fa-clock"
                 ></i>
@@ -94,22 +103,28 @@ const VideoDisplayCard = ({ video }) => {
               {isInLikedVideos ? (
                 <i
                   onClick={() =>
-                    removeVideoFromLikedVideos(
-                      encodedToken,
-                      video._id,
-                      likedVideosDispatch
-                    )
+                    encodedToken
+                      ? removeVideoFromLikedVideos(
+                          encodedToken,
+                          video._id,
+                          likedVideosDispatch,
+                          showToast
+                        )
+                      : showToast("Please login first!", "error")
                   }
                   className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fas fa-heart"
                 ></i>
               ) : (
                 <i
                   onClick={() =>
-                    addVideoToLikedVideos(
-                      encodedToken,
-                      video,
-                      likedVideosDispatch
-                    )
+                    encodedToken
+                      ? addVideoToLikedVideos(
+                          encodedToken,
+                          video,
+                          likedVideosDispatch,
+                          showToast
+                        )
+                      : showToast("Please login first!", "error")
                   }
                   className="text-2xl text-white text-hover-rose-500 cursor-pointer  mr-3 fa-solid fas fa-heart"
                 ></i>
