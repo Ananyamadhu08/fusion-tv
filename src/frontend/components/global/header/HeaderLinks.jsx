@@ -14,7 +14,7 @@ function HeaderLinks() {
       </Link>
 
       <Link
-        to="/"
+        to="/explore"
         className="flex justify-center align-items-center text-white text-hover-rose-500"
         style={{ gap: "0.4rem" }}
       >
@@ -23,7 +23,7 @@ function HeaderLinks() {
       </Link>
 
       <Link
-        to="/"
+        to="/playlist"
         className="flex justify-center align-items-center text-white text-hover-rose-500"
         style={{ gap: "0.4rem" }}
       >
@@ -32,7 +32,7 @@ function HeaderLinks() {
       </Link>
 
       <Link
-        to="/"
+        to="/likedvideos"
         className="flex justify-center align-items-center text-white text-hover-rose-500"
         style={{ gap: "0.4rem" }}
       >
@@ -41,7 +41,7 @@ function HeaderLinks() {
       </Link>
 
       <Link
-        to="/"
+        to="/watchlater"
         className="flex justify-center align-items-center text-white text-hover-rose-500"
         style={{ gap: "0.4rem" }}
       >
@@ -50,7 +50,7 @@ function HeaderLinks() {
       </Link>
 
       <Link
-        to="/"
+        to="/history"
         className="flex justify-center align-items-center text-white text-hover-rose-500"
         style={{ gap: "0.4rem" }}
       >
