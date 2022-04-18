@@ -1,4 +1,5 @@
 import { useContext, createContext, useReducer, useEffect } from "react";
+import { useToast } from "../../hooks";
 import { getVideos } from "../../utils";
 import { videosReducer } from "../reducers";
 
@@ -16,11 +17,11 @@ export const VideosProvider = ({ children }) => {
     initVideoState
   );
 
-  useEffect(() => {
-    getVideos(videosDispatch);
-  }, []);
+  const { showToast } = useToast();
 
-  // console.log(videosState);
+  useEffect(() => {
+    getVideos(videosDispatch, showToast);
+  }, []);
 
   return (
     <VideosContext.Provider value={{ videosState, videosDispatch }}>

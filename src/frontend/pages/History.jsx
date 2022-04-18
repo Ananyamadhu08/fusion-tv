@@ -1,6 +1,7 @@
 import React from "react";
 import { HistoryPageCard } from "../components";
 import { useAuth, useHistory } from "../context/providers";
+import { useToast } from "../hooks";
 import { deleteAllHistory } from "../utils";
 
 const History = () => {
@@ -13,11 +14,15 @@ const History = () => {
     authState: { encodedToken },
   } = useAuth();
 
+  const { showToast } = useToast();
+
   return (
     <div className="historyPage_container">
       <div className="flex justify-end">
         <button
-          onClick={() => deleteAllHistory(encodedToken, historyDispatch)}
+          onClick={() =>
+            deleteAllHistory(encodedToken, historyDispatch, showToast)
+          }
           className="btn bg-rose-500 shadow-lg text-white mt-7"
         >
           clear history

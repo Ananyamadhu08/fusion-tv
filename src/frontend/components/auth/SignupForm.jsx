@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/providers";
+import { useToast } from "../../hooks";
 import { signupUser } from "../../utils";
 
 const intUserData = {
@@ -11,8 +12,11 @@ const intUserData = {
 };
 
 function SignupForm() {
+  const navigateCallback = useNavigate();
+
   const [userData, setUserData] = useState(intUserData);
-  const { authState, authDispatch } = useAuth();
+
+  const { authDispatch } = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +24,8 @@ function SignupForm() {
     setUserData({ ...userData, [name]: value });
   };
 
-  console.log(userData);
+  const { showToast } = useToast();
+
   return (
     <form
       className="relative w-full"
@@ -132,13 +137,47 @@ function SignupForm() {
                 type="submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  signupUser(userData, authDispatch);
+
+                  signupUser(
+                    userData,
+                    authDispatch,
+                    navigateCallback,
+                    showToast
+                  );
+
+                  setUserData(intUserData);
                 }}
                 className="px-4 py-1 text-lg bg-slate-700 rounded text-white w-full bg-hover-rose-800 text-hover-rose-200"
               >
                 sign up
               </button>
-              <button className="px-4 w-full py-1 text-lg bg-slate-700 rounded text-white bg-hover-rose-800 text-hover-rose-200">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  setUserData({
+                    email: "johnDoe@gmail.com",
+                    password: "johnDoe321",
+                    firstName: "John",
+                    lastName: "Doe",
+                  });
+
+                  signupUser(
+                    {
+                      email: "johnDoe@gmail.com",
+                      password: "johnDoe321",
+                      firstName: "John",
+                      lastName: "Doe",
+                    },
+                    authDispatch,
+                    navigateCallback,
+                    showToast
+                  );
+
+                  setUserData(intUserData);
+                }}
+                className="px-4 w-full py-1 text-lg bg-slate-700 rounded text-white bg-hover-rose-800 text-hover-rose-200"
+              >
                 sign up with test credentials
               </button>
             </div>

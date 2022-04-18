@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth, usePlaylist } from "../../context/providers";
+import { useToast } from "../../hooks";
 import {
   addToPlaylist,
   deletePlaylist,
@@ -13,13 +14,34 @@ function PlaylistListItem({ playlistName, playlistId, video }) {
     authState: { encodedToken },
   } = useAuth();
 
-  const { playlistDispatch } = usePlaylist();
+  const {
+    playlistState: { playlists },
+    playlistDispatch,
+  } = usePlaylist();
+
+  const { showToast } = useToast();
 
   useEffect(() => {
     if (addedToPlaylist && encodedToken) {
-      addToPlaylist(encodedToken, playlistId, video, playlistDispatch);
+      addToPlaylist(
+        encodedToken,
+        playlistId,
+        video,
+        playlistDispatch,
+        showToast
+      );
+    }
+
+    if (!encodedToken) {
+      showToast("Please Login", "error");
     }
   }, [addedToPlaylist]);
+
+  let isInPlaylist = playlists.find((item) => item._id === playlistId);
+
+  let isVideoInPlaylist = isInPlaylist.videos.find(
+    (item) => item._id === video._id
+  );
 
   return (
     <li className="pb-3">
@@ -28,7 +50,7 @@ function PlaylistListItem({ playlistName, playlistId, video }) {
           type="checkbox"
           value={addedToPlaylist}
           onChange={(e) => {
-            if (addedToPlaylist === false && encodedToken) {
+            if (isVideoInPlaylist && encodedToken) {
               removeVideoFromPlaylist(
                 encodedToken,
                 playlistId,
@@ -36,6 +58,11 @@ function PlaylistListItem({ playlistName, playlistId, video }) {
                 playlistDispatch
               );
             }
+
+            if (!encodedToken) {
+              showToast("Please Login", "error");
+            }
+
             setAddedToPlaylist(e.target.checked);
           }}
           className="mr-3"
@@ -45,7 +72,14 @@ function PlaylistListItem({ playlistName, playlistId, video }) {
 
       <i
         onClick={() =>
-          deletePlaylist(encodedToken, playlistId, playlistDispatch)
+          encodedToken
+            ? deletePlaylist(
+                encodedToken,
+                playlistId,
+                playlistDispatch,
+                showToast
+              )
+            : showToast("Please login first!", "error")
         }
         className="fa-solid fa-trash-can text-rose-800 ml-3 text-hover-slate-500 cursor-pointer"
       ></i>
