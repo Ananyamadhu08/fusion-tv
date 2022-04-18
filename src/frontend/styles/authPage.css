@@ -1,0 +1,17 @@
+.authPage__container {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: block;
+  top: 7rem;
+  padding: 1rem;
+}
+
+.authPage__container::after {
+  background: url("https://res.cloudinary.com/dgl5z5ozi/image/upload/v1650153155/fusionTv/images/login-background_wbwky1.jpg");
+  content: "";
+  position: absolute;
+  inset: 0px;
+  opacity: 1;
+  z-index: -1;
+}
