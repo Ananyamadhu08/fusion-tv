@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {
   useAuth,
   useCategory,
+  useHistory,
   useLikedVideos,
   useWatchLater,
 } from "../../context/providers";
@@ -10,22 +11,23 @@ import { getCategoryImg } from "../../helpers";
 import {
   addVideoToLikedVideos,
   addVideoToWatchLater,
+  removeVideoFromHistory,
   removeVideoFromLikedVideos,
   removeVideoToWatchLater,
 } from "../../utils";
+import AddToPlaylist from "../explore/AddToPlaylist";
 import Modal from "../global/Modal";
-import AddToPlaylist from "./AddToPlaylist";
 
-const VideoDisplayCard = ({ video }) => {
+const HistoryPageCard = ({ video }) => {
   const [showModal, setShowModal] = useState(false);
-
-  const {
-    authState: { encodedToken },
-  } = useAuth();
 
   const {
     categoryState: { categories },
   } = useCategory();
+
+  const {
+    authState: { encodedToken },
+  } = useAuth();
 
   const {
     watchLaterState: { watchLater },
@@ -37,37 +39,63 @@ const VideoDisplayCard = ({ video }) => {
     likedVideosDispatch,
   } = useLikedVideos();
 
-  let isInWatchlater = watchLater.find((item) => item._id === video._id);
-  let isInLikedVideos = likedVideos.find((item) => item._id === video._id);
+  const { historyDispatch } = useHistory();
 
   const categoryImage = getCategoryImg(video.category, categories);
 
+  const isInWatchLater = watchLater.find((item) => item._id === video._id);
+  const isInLikedVideos = likedVideos.find((item) => item._id === video._id);
   return (
     <>
-      <div className="videoCard bg-slate-900">
+      <div className="videoCard">
         <Link to={`/explore/${video._id}`} className="videoCard__hero__img">
-          <i className="absolute text-6xl text-rose-500 cursor-pointer fa-solid fa-play"></i>
+          <i className="absolute text-6xl text-amber-500 cursor-pointer fa-solid fa-play"></i>
           <img src={video.img} alt="" />
         </Link>
+
+        {/* <button
+          style={{ opacity: "1", color: "red" }}
+          className="btn-close bg-rose-500"
+        ></button> */}
+
         <div className="videoCard__body">
-          <h3 className="mb-2 text-white">{video.title}</h3>
+          <h3 className="mb-2">{video.title}</h3>
+
           <div className="flex align-items-center mb-2">
             <img
               className="rounded-full h-10 w-10"
               src={categoryImage ? categoryImage : ""}
               alt="category-img"
             />
-            <h4 className="text-rose-500"> {video.category} </h4>
+
+            <h4 className="text-amber-500"> {video.category} </h4>
           </div>
-          <p className="text-white"> {video.desc} </p>
+
+          <p> {video.desc} </p>
 
           <div className="videoCard__actions flex justify-between mt-4">
-            <i
+            {/* <i
               onClick={() => setShowModal(true)}
-              className="text-2xl text-hover-rose-500 text-white cursor-pointer fa-solid fa-circle-plus"
-            ></i>
+              className="text-2xl text-hover-amber-500 cursor-pointer fa-solid fa-circle-plus"
+            ></i> */}
+
+            <button
+              onClick={() =>
+                removeVideoFromHistory(encodedToken, video._id, historyDispatch)
+              }
+              style={{ padding: "0px", background: "transparent" }}
+              className="btn btn-link-amber"
+            >
+              {" "}
+              remove history
+            </button>
+            {/* <button className="btn btn-solid-amber shadow-lg text-white">
+              {" "}
+              remove watch later
+            </button> */}
+
             <div>
-              {isInWatchlater ? (
+              {isInWatchLater ? (
                 <i
                   onClick={() =>
                     removeVideoToWatchLater(
@@ -76,7 +104,7 @@ const VideoDisplayCard = ({ video }) => {
                       watchLaterDispatch
                     )
                   }
-                  className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-clock"
+                  className="text-2xl text-amber-500  cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
               ) : (
                 <i
@@ -87,10 +115,9 @@ const VideoDisplayCard = ({ video }) => {
                       watchLaterDispatch
                     )
                   }
-                  className="text-2xl text-white text-hover-rose-500 cursor-pointer   mr-3 fa-solid fa-clock"
+                  className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
               )}
-
               {isInLikedVideos ? (
                 <i
                   onClick={() =>
@@ -100,7 +127,7 @@ const VideoDisplayCard = ({ video }) => {
                       likedVideosDispatch
                     )
                   }
-                  className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fas fa-heart"
+                  className="text-2xl text-amber-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>
               ) : (
                 <i
@@ -111,7 +138,7 @@ const VideoDisplayCard = ({ video }) => {
                       likedVideosDispatch
                     )
                   }
-                  className="text-2xl text-white text-hover-rose-500 cursor-pointer  mr-3 fa-solid fas fa-heart"
+                  className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>
               )}
             </div>
@@ -127,4 +154,5 @@ const VideoDisplayCard = ({ video }) => {
     </>
   );
 };
-export default VideoDisplayCard;
+
+export default HistoryPageCard;
