@@ -35,7 +35,14 @@ function PlaylistListItem({ playlistName, playlistId, video }) {
     if (!encodedToken) {
       showToast("Please Login", "error");
     }
-  }, [addedToPlaylist]);
+  }, [
+    addedToPlaylist,
+    encodedToken,
+    playlistId,
+    video,
+    playlistDispatch,
+    showToast,
+  ]);
 
   let isInPlaylist = playlists.find((item) => item._id === playlistId);
 

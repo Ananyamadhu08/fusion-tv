@@ -25,7 +25,7 @@ export const LikedVideosProvider = ({ children }) => {
     if (encodedToken) {
       getAllLikedVideos(encodedToken, likedVideosDispatch, showToast);
     }
-  }, []);
+  }, [showToast]);
 
   return (
     <LikedVideosContext.Provider

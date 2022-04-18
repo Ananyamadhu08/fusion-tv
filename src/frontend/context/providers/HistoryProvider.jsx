@@ -25,7 +25,7 @@ export const HistoryProvider = ({ children }) => {
     if (encodedToken) {
       getAllHistory(encodedToken, historyDispatch, showToast);
     }
-  }, []);
+  }, [showToast]);
 
   return (
     <HistoryContext.Provider value={{ historyState, historyDispatch }}>

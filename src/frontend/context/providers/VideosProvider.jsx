@@ -21,7 +21,7 @@ export const VideosProvider = ({ children }) => {
 
   useEffect(() => {
     getVideos(videosDispatch, showToast);
-  }, []);
+  }, [showToast]);
 
   return (
     <VideosContext.Provider value={{ videosState, videosDispatch }}>

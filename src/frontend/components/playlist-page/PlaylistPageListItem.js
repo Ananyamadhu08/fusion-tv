@@ -19,6 +19,8 @@ const PlaylistPageListItem = ({
 
   const { playlistDispatch } = usePlaylist();
 
+  const { showToast } = useToast();
+
   useEffect(() => {
     if (addedToPlaylist && encodedToken) {
       addToPlaylist(
@@ -33,9 +35,14 @@ const PlaylistPageListItem = ({
     if (!encodedToken) {
       showToast("Please login first!", "error");
     }
-  }, [addedToPlaylist]);
-
-  const { showToast } = useToast();
+  }, [
+    addedToPlaylist,
+    encodedToken,
+    playlistDispatch,
+    playlistId,
+    showToast,
+    video,
+  ]);
 
   return (
     <li className="pb-3">

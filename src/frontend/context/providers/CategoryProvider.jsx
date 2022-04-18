@@ -21,7 +21,7 @@ export const CategoryProvider = ({ children }) => {
 
   useEffect(() => {
     getCategories(categoryDispatch, showToast);
-  }, []);
+  }, [showToast]);
 
   return (
     <CategoryContext.Provider value={{ categoryState, categoryDispatch }}>

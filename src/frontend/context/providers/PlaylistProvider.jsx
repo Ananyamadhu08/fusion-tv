@@ -25,7 +25,7 @@ export const PlaylistProvider = ({ children }) => {
     if (encodedToken) {
       getAllPlaylists(encodedToken, playlistDispatch, showToast);
     }
-  }, []);
+  }, [showToast]);
 
   return (
     <PlaylistContext.Provider value={{ playlistState, playlistDispatch }}>

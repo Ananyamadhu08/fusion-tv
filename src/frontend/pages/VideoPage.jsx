@@ -69,15 +69,6 @@ const VideoPage = () => {
   const isInLikedVideos = likedVideos.find(
     (item) => item._id === currentVideoDetails._id
   );
-  const isInHistory = history.find(
-    (item) => item._id === currentVideoDetails._id
-  );
-
-  const handleHistory = () => {
-    if (encodedToken && !isInHistory) {
-      addVideoToHistory(encodedToken, historyDispatch);
-    }
-  };
 
   const { showToast } = useToast();
 
