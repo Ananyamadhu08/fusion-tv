@@ -8,13 +8,22 @@ export {
   removeVideoFromPlaylistService,
   deletePlaylistService,
 } from "./playlistServices";
+
 export {
   getAllWatchLaterVideosService,
   addVideoToWatchLaterService,
   removeVideoToWatchLaterService,
 } from "./watchLaterServices";
+
 export {
   getAllLikedVideosService,
   addVideoToLikedVideosService,
   removeVideoFromLikedVideosService,
 } from "./likedVideosServices";
+
+export {
+  getAllHistoryService,
+  addVideoToHistoryService,
+  removeVideoFromHistoryService,
+  deleteAllHistoryService,
+} from "./historyServices.js";
