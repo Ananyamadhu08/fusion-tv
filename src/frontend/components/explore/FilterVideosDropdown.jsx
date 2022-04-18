@@ -1,7 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { filterActions } from "../../context/constants";
+import { useFilters } from "../../context/providers";
 
 const FilterVideoDropdown = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const { filtersDispatch } = useFilters();
+
+  useEffect(() => {
+    filtersDispatch({
+      type: filterActions.FILTER_BY,
+      payload: selectedCategory,
+    });
+  }, [selectedCategory, filtersDispatch]);
 
   return (
     <div className="custom-select">

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useAuth, usePlaylist } from "../../context/providers";
+import { createPlaylist } from "../../utils";
 import Input from "../global/Input";
 import TextArea from "../global/TextArea";
 
@@ -9,6 +11,12 @@ const initPlaylistState = {
 
 const AddToPlaylistForm = () => {
   const [playlistDetails, setPlaylistDetails] = useState(initPlaylistState);
+
+  const { playlistDispatch } = usePlaylist();
+
+  const {
+    authState: { encodedToken },
+  } = useAuth();
 
   return (
     <div>
@@ -40,7 +48,13 @@ const AddToPlaylistForm = () => {
       <div className="spacer-3rem"></div>
       <div className="spacer-1rem"></div>
 
-      <button className="btn bg-rose-600 shadow-lg text-white">
+      <button
+        onClick={() => {
+          createPlaylist(encodedToken, playlistDetails, playlistDispatch);
+          setPlaylistDetails(initPlaylistState);
+        }}
+        className="btn bg-rose-600 shadow-lg text-white"
+      >
         create playlist
       </button>
     </div>
