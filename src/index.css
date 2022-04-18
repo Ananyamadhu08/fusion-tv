@@ -23,3 +23,6 @@ code {
 
 /* ---------------- EXPLORE PAGE ------------ */
 @import url("./frontend/styles/explorePage.css");
+
+/* ---------------- Video PAGE ------------ */
+@import url("./frontend/styles/video-page.css");

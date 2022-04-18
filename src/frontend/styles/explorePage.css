@@ -83,3 +83,48 @@
   text-overflow: clip;
   height: 3rem;
 }
+
+/* ---------------- */
+
+.likedVideos__container {
+  display: block;
+  min-height: 100vh;
+
+  position: relative;
+  overflow-x: hidden;
+  top: 5rem;
+  padding: 1rem;
+}
+
+.likedVideos__container::after {
+  background: var(--slate-800);
+  content: "";
+  position: absolute;
+  inset: 0px;
+  opacity: 1;
+  z-index: -1;
+}
+
+.likedVideos__main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.historyPage_container {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: block;
+  top: 7rem;
+  padding: 1rem;
+}
+
+.historyPage_container::after {
+  background: var(--slate-800);
+  content: "";
+  position: absolute;
+  inset: 0px;
+  opacity: 1;
+  z-index: -1;
+}

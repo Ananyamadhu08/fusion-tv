@@ -112,7 +112,7 @@ const VideoPage = () => {
                   alt="category-img"
                 />
 
-                <h4 className="text-amber-500">
+                <h4 className="text-rose-500">
                   {" "}
                   {currentVideoDetails.category}{" "}
                 </h4>
@@ -121,7 +121,7 @@ const VideoPage = () => {
               <div className="videoPage__actions">
                 <i
                   onClick={() => setShowModal(true)}
-                  className="text-2xl text-hover-amber-500 cursor-pointer fa-solid fa-circle-plus"
+                  className="text-2xl text-hover-rose-500 cursor-pointer fa-solid fa-circle-plus"
                 ></i>
                 {isInWatchLater ? (
                   <i
@@ -132,7 +132,7 @@ const VideoPage = () => {
                         watchLaterDispatch
                       )
                     }
-                    className="text-2xl text-amber-500  cursor-pointer fa-solid fa-clock"
+                    className="text-2xl text-rose-500  cursor-pointer fa-solid fa-clock"
                   ></i>
                 ) : (
                   <i
@@ -143,7 +143,7 @@ const VideoPage = () => {
                         watchLaterDispatch
                       )
                     }
-                    className="text-2xl text-hover-amber-500 cursor-pointer  fa-solid fa-clock"
+                    className="text-2xl text-hover-rose-500 cursor-pointer  fa-solid fa-clock"
                   ></i>
                 )}
                 {isInLikedVideos ? (
@@ -155,7 +155,7 @@ const VideoPage = () => {
                         likedVideosDispatch
                       )
                     }
-                    className="text-2xl text-amber-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                    className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                   ></i>
                 ) : (
                   <i
@@ -166,7 +166,7 @@ const VideoPage = () => {
                         likedVideosDispatch
                       )
                     }
-                    className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                    className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                   ></i>
                 )}
               </div>

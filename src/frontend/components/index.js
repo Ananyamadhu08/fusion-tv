@@ -15,3 +15,8 @@ export { default as VideoDisplayCard } from "./explore/VideoDisplayCard";
 export { default as Input } from "./global/Input";
 export { default as TextArea } from "./global/TextArea";
 export { default as Modal } from "./global/Modal";
+export { default as HistoryPageCard } from "./history-page/HistoryPageCard";
+export { default as LikedVidesCard } from "./likedVideos/LikedVideoCard";
+export { default as CreatePlaylist } from "./playlist-page/CreatePlaylist";
+export { default as PlaylistPageList } from "./playlist-page/PlaylistPageList";
+export { default as PlaylistPageListItem } from "./playlist-page/PlaylistPageListItem";

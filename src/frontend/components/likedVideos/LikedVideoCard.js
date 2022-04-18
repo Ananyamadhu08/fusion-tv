@@ -13,19 +13,19 @@ import {
   removeVideoFromLikedVideos,
   removeVideoToWatchLater,
 } from "../../utils";
+import AddToPlaylist from "../explore/AddToPlaylist";
 import Modal from "../global/Modal";
-import AddToPlaylist from "./AddToPlaylist";
 
-const VideoDisplayCard = ({ video }) => {
+const LikedVideoCard = ({ video }) => {
   const [showModal, setShowModal] = useState(false);
-
-  const {
-    authState: { encodedToken },
-  } = useAuth();
 
   const {
     categoryState: { categories },
   } = useCategory();
+
+  const {
+    authState: { encodedToken },
+  } = useAuth();
 
   const {
     watchLaterState: { watchLater },
@@ -37,11 +37,10 @@ const VideoDisplayCard = ({ video }) => {
     likedVideosDispatch,
   } = useLikedVideos();
 
-  let isInWatchlater = watchLater.find((item) => item._id === video._id);
-  let isInLikedVideos = likedVideos.find((item) => item._id === video._id);
-
   const categoryImage = getCategoryImg(video.category, categories);
 
+  const isInWatchLater = watchLater.find((item) => item._id === video._id);
+  const isInLikedVideos = likedVideos.find((item) => item._id === video._id);
   return (
     <>
       <div className="videoCard bg-slate-900">
@@ -49,16 +48,20 @@ const VideoDisplayCard = ({ video }) => {
           <i className="absolute text-6xl text-rose-500 cursor-pointer fa-solid fa-play"></i>
           <img src={video.img} alt="" />
         </Link>
+
         <div className="videoCard__body">
           <h3 className="mb-2 text-white">{video.title}</h3>
+
           <div className="flex align-items-center mb-2">
             <img
               className="rounded-full h-10 w-10"
               src={categoryImage ? categoryImage : ""}
               alt="category-img"
             />
+
             <h4 className="text-rose-500"> {video.category} </h4>
           </div>
+
           <p className="text-white"> {video.desc} </p>
 
           <div className="videoCard__actions flex justify-between mt-4">
@@ -67,7 +70,7 @@ const VideoDisplayCard = ({ video }) => {
               className="text-2xl text-hover-rose-500 text-white cursor-pointer fa-solid fa-circle-plus"
             ></i>
             <div>
-              {isInWatchlater ? (
+              {isInWatchLater ? (
                 <i
                   onClick={() =>
                     removeVideoToWatchLater(
@@ -76,7 +79,7 @@ const VideoDisplayCard = ({ video }) => {
                       watchLaterDispatch
                     )
                   }
-                  className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-clock"
+                  className="text-2xl text-rose-500 text-rose  cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
               ) : (
                 <i
@@ -87,10 +90,9 @@ const VideoDisplayCard = ({ video }) => {
                       watchLaterDispatch
                     )
                   }
-                  className="text-2xl text-white text-hover-rose-500 cursor-pointer   mr-3 fa-solid fa-clock"
+                  className="text-2xl text-white text-hover-rose-500 text-white cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
               )}
-
               {isInLikedVideos ? (
                 <i
                   onClick={() =>
@@ -100,7 +102,7 @@ const VideoDisplayCard = ({ video }) => {
                       likedVideosDispatch
                     )
                   }
-                  className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fas fa-heart"
+                  className="text-2xl text-rose-500 text-white  cursor-pointer  mr-3 fas fa-heart"
                 ></i>
               ) : (
                 <i
@@ -111,7 +113,7 @@ const VideoDisplayCard = ({ video }) => {
                       likedVideosDispatch
                     )
                   }
-                  className="text-2xl text-white text-hover-rose-500 cursor-pointer  mr-3 fa-solid fas fa-heart"
+                  className="text-2xl text-white text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart"
                 ></i>
               )}
             </div>
@@ -127,4 +129,5 @@ const VideoDisplayCard = ({ video }) => {
     </>
   );
 };
-export default VideoDisplayCard;
+
+export default LikedVideoCard;

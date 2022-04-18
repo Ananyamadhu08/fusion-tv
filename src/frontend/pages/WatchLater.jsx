@@ -1,5 +1,5 @@
 import React from "react";
-import { LikedVideoCard } from "../components";
+import LikedVideoCard from "../components/likedVideos/LikedVideoCard";
 import { useWatchLater } from "../context/providers";
 
 const WatchLater = () => {
@@ -8,12 +8,12 @@ const WatchLater = () => {
   } = useWatchLater();
 
   return (
-    <div className="likedVideoscontainer">
+    <div className="likedVideos__container">
       <div className="spacer-3rem"></div>
       <div className="spacer-3rem"></div>
       <div className="spacer-3rem"></div>
 
-      <div className="likedVideosmain">
+      <div className="likedVideos__main">
         {watchLater &&
           watchLater.map((video) => (
             <LikedVideoCard video={video} key={video._id} />

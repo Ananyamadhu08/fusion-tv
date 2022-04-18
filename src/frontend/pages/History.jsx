@@ -18,7 +18,7 @@ const History = () => {
       <div className="flex justify-end">
         <button
           onClick={() => deleteAllHistory(encodedToken, historyDispatch)}
-          className="btn btn-solid-amber shadow-lg text-white"
+          className="btn bg-rose-500 shadow-lg text-white mt-7"
         >
           clear history
         </button>
