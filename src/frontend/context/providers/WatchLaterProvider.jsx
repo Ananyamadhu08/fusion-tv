@@ -25,7 +25,7 @@ export const WatchLaterProvider = ({ children }) => {
     if (encodedToken) {
       getAllWatchLaterVideos(encodedToken, watchLaterDispatch, showToast);
     }
-  }, [showToast]);
+  }, []);
 
   console.log(watchLaterState);
 
