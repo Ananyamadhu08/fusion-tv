@@ -9,11 +9,11 @@ const Modal = ({ showModal, modalBody, setShowModal, modalTitle }) => {
       <div className="modal-cont bg-white">
         <span
           onClick={() => setShowModal(false)}
-          class="modal-close-btn close-btn text-slate-700 text-hover-white fas fa-times"
+          class="modal-close-btn close-btn text-slate-700 text-hover-rose-500 fas fa-times"
         ></span>
         <h2>{modalTitle}</h2>
 
-        <div className="modal-body p-5"> {modalBody} </div>
+        <div className="modal-body"> {modalBody} </div>
       </div>
     </div>
   );

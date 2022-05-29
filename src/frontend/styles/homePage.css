@@ -1,5 +1,9 @@
 /* style={{ maxHeight: "25rem", maxWidth: "25rem" }} */
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .loader-img {
   max-height: 25rem;
   max-width: 25rem;

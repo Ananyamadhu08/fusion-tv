@@ -35,17 +35,14 @@ const PlaylistPageListItem = ({
     if (!encodedToken) {
       showToast("Please login first!", "error");
     }
-  }, [
-    addedToPlaylist,
-    encodedToken,
-    playlistDispatch,
-    playlistId,
-    showToast,
-    video,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [addedToPlaylist, encodedToken, playlistDispatch, playlistId, video]);
 
   return (
-    <li className="pb-3">
+    <li
+      className="pb-3 bg-slate-900 px-6 py-4 mb-5 rounded-lg flex align-items-center justify-between"
+      style={{ minWidth: "10rem" }}
+    >
       <label
         onClick={() => setSelectedPlaylist(playlistName)}
         className="t text-lg cursor-pointer"

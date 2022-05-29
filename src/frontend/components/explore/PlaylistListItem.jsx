@@ -35,14 +35,8 @@ function PlaylistListItem({ playlistName, playlistId, video }) {
     if (!encodedToken) {
       showToast("Please Login", "error");
     }
-  }, [
-    addedToPlaylist,
-    encodedToken,
-    playlistId,
-    video,
-    playlistDispatch,
-    showToast,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [addedToPlaylist, encodedToken, playlistId, video, playlistDispatch]);
 
   let isInPlaylist = playlists.find((item) => item._id === playlistId);
 

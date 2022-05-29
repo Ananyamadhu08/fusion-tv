@@ -66,7 +66,8 @@ const AddToPlaylistForm = ({ setShowModal }) => {
 
           setShowModal(false);
         }}
-        className="btn bg-rose-600 shadow-lg text-white"
+        className="bg-rose-600 shadow-lg text-white px-4 py-2 text-lg mt-2 rounded-lg cursor-pointer"
+        style={{ border: 0 }}
       >
         create playlist
       </button>
