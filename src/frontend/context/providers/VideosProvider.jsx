@@ -21,7 +21,8 @@ export const VideosProvider = ({ children }) => {
 
   useEffect(() => {
     getVideos(videosDispatch, showToast);
-  }, [showToast]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <VideosContext.Provider value={{ videosState, videosDispatch }}>

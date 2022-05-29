@@ -25,7 +25,8 @@ export const LikedVideosProvider = ({ children }) => {
     if (encodedToken) {
       getAllLikedVideos(encodedToken, likedVideosDispatch, showToast);
     }
-  }, [showToast]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <LikedVideosContext.Provider

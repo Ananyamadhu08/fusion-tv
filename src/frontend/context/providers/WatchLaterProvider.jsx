@@ -25,7 +25,8 @@ export const WatchLaterProvider = ({ children }) => {
     if (encodedToken) {
       getAllWatchLaterVideos(encodedToken, watchLaterDispatch, showToast);
     }
-  }, [showToast]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   console.log(watchLaterState);
 

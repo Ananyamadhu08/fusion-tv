@@ -25,7 +25,8 @@ export const PlaylistProvider = ({ children }) => {
     if (encodedToken) {
       getAllPlaylists(encodedToken, playlistDispatch, showToast);
     }
-  }, [showToast]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <PlaylistContext.Provider value={{ playlistState, playlistDispatch }}>
