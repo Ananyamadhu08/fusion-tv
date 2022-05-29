@@ -7,17 +7,18 @@ const ExplorePage = () => {
 
   return (
     <div className="explorePage__container">
-      <div className="mt-10 flex justify-start">
+      <div className="mt-10 ml-7 flex justify-start">
         <FilterVideosDropdown />
       </div>
-      <div className="spacer-3rem"></div>
 
-      <div className="videoCard__container grid">
+      {/* <div className="m-auto"> */}
+      <div className="videoCard__container grid p-7 mt-8">
         {filteredVideos &&
           filteredVideos.map((video) => (
             <VideoDisplayCard video={video} key={video._id} />
           ))}
       </div>
+      {/* </div> */}
 
       <div className="spacer-3rem"></div>
       <div className="spacer-3rem"></div>

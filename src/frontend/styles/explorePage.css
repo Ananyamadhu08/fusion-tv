@@ -20,7 +20,7 @@
 
 .videoCard__container {
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .videoCard {
