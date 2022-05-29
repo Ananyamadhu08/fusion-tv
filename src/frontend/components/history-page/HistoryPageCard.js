@@ -50,16 +50,11 @@ const HistoryPageCard = ({ video }) => {
   const isInLikedVideos = likedVideos.find((item) => item._id === video._id);
   return (
     <>
-      <div className="videoCard">
+      <div className="videoCard bg-slate-900 text-white">
         <Link to={`/explore/${video._id}`} className="videoCard__hero__img">
-          <i className="absolute text-6xl text-amber-500 cursor-pointer fa-solid fa-play"></i>
+          <i className="absolute text-6xl text-rose-500 cursor-pointer fa-solid fa-play"></i>
           <img src={video.img} alt="" />
         </Link>
-
-        {/* <button
-          style={{ opacity: "1", color: "red" }}
-          className="btn-close bg-rose-500"
-        ></button> */}
 
         <div className="videoCard__body">
           <h3 className="mb-2">{video.title}</h3>
@@ -71,17 +66,12 @@ const HistoryPageCard = ({ video }) => {
               alt="category-img"
             />
 
-            <h4 className="text-amber-500"> {video.category} </h4>
+            <h4 className="text-rose-500"> {video.category} </h4>
           </div>
 
           <p> {video.desc} </p>
 
-          <div className="videoCard__actions flex justify-between mt-4">
-            {/* <i
-              onClick={() => setShowModal(true)}
-              className="text-2xl text-hover-amber-500 cursor-pointer fa-solid fa-circle-plus"
-            ></i> */}
-
+          <div className="videoCard__actions flex justify-between align-items-center mt-3">
             <button
               onClick={() =>
                 encodedToken
@@ -93,11 +83,11 @@ const HistoryPageCard = ({ video }) => {
                     )
                   : showToast("Please login first!", "error")
               }
-              style={{ padding: "0px", background: "transparent" }}
-              className="btn btn-link-amber"
+              style={{ border: 0 }}
+              className=" p-2 px-5 bg-rose-500 rounded-sm"
             >
               {" "}
-              remove history
+              remove from history
             </button>
             {/* <button className="btn btn-solid-amber shadow-lg text-white">
               {" "}
@@ -117,7 +107,7 @@ const HistoryPageCard = ({ video }) => {
                         )
                       : showToast("Please login first!", "error")
                   }
-                  className="text-2xl text-amber-500  cursor-pointer  mr-3 fa-solid fa-clock"
+                  className="text-2xl text-hover-rose-500  cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
               ) : (
                 <i
@@ -131,7 +121,7 @@ const HistoryPageCard = ({ video }) => {
                         )
                       : showToast("Please login first!", "error")
                   }
-                  className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-clock"
+                  className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
               )}
               {isInLikedVideos ? (
@@ -146,7 +136,7 @@ const HistoryPageCard = ({ video }) => {
                         )
                       : showToast("Please login first!", "error")
                   }
-                  className="text-2xl text-amber-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                  className="text-2xl text-hover-rose-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>
               ) : (
                 <i
@@ -160,7 +150,7 @@ const HistoryPageCard = ({ video }) => {
                         )
                       : showToast("Please login first!", "error")
                   }
-                  className="text-2xl text-hover-amber-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                  className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>
               )}
             </div>

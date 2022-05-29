@@ -6,7 +6,7 @@ const Input = ({ value, onChange, label, errorMessage, ...rest }) => {
       <input
         type="text"
         id="email"
-        className="input input-rose-800 input-blue-focus"
+        className="input input-rose-800 input-blue-focus text-black"
         autoComplete="off"
         placeholder=" "
         value={value}

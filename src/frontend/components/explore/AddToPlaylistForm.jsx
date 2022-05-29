@@ -10,7 +10,7 @@ const initPlaylistState = {
   description: "",
 };
 
-const AddToPlaylistForm = () => {
+const AddToPlaylistForm = ({ setShowModal }) => {
   const [playlistDetails, setPlaylistDetails] = useState(initPlaylistState);
 
   const { playlistDispatch } = usePlaylist();
@@ -63,6 +63,8 @@ const AddToPlaylistForm = () => {
             : showToast("Please Login", "error");
 
           setPlaylistDetails(initPlaylistState);
+
+          setShowModal(false);
         }}
         className="btn bg-rose-600 shadow-lg text-white"
       >
