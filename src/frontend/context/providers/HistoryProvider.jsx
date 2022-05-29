@@ -25,6 +25,7 @@ export const HistoryProvider = ({ children }) => {
     if (encodedToken) {
       getAllHistory(encodedToken, historyDispatch, showToast);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
