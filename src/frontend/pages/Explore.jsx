@@ -20,7 +20,6 @@ const ExplorePage = () => {
 
       <div className="spacer-3rem"></div>
       <div className="spacer-3rem"></div>
-      <div className="spacer-3rem"></div>
     </div>
   );
 };

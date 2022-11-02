@@ -43,7 +43,7 @@ const Playlists = () => {
       </div>
       <div className="spacer-3rem"></div>
       <div className="spacer-3rem"></div>
-      <div className="spacer-3rem mb-7"></div>
+      <div className="mb-5"></div>
     </div>
   );
 };

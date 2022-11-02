@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { useAuth, usePlaylist } from "../../context/providers";
 import { useToast } from "../../hooks";
@@ -35,7 +36,6 @@ const PlaylistPageListItem = ({
     if (!encodedToken) {
       showToast("Please login first", "error");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addedToPlaylist, encodedToken, playlistDispatch, playlistId, video]);
 
   return (
