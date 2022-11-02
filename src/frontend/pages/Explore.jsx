@@ -12,7 +12,7 @@ const ExplorePage = () => {
       </div>
 
       {/* <div className="m-auto"> */}
-      <div className="videoCard__container grid p-7 mt-8">
+      <div className="videoCard__container grid p-7 mt-6">
         {filteredVideos &&
           filteredVideos.map((video) => (
             <VideoDisplayCard video={video} key={video._id} />

@@ -6,7 +6,7 @@ import HeaderRight from "./HeaderRight";
 function Header() {
   return (
     <div>
-      <header className="w-full h-28 shadow bg-slate-900 fixed z-50">
+      <header className="w-full h-24 shadow bg-slate-900 fixed z-50">
         <div className="flex justify-between align-items-center h-full w-full ml-7">
           <div className="flex justify-center align-items-center">
             <Link

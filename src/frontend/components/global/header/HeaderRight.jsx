@@ -30,14 +30,14 @@ function HeaderRight() {
 
             showToast("Logout Success!", "success");
           }}
-          className="flex justify-items-center px-5 py-2 font-bold text-xl align-items-center text-white bg-rose-600 btn-bg-hover-rose-900 mr-12 rounded-lg"
+          className="flex justify-items-center px-4 py-2 font-bold text-lg align-items-center text-white bg-rose-600 btn-bg-hover-rose-900 mr-12 rounded-lg"
         >
           LOGOUT
         </div>
       ) : (
         <Link
           to="/login"
-          className="flex justify-items-center px-5 py-2 font-bold text-xl align-items-center text-white bg-rose-600 btn-bg-hover-rose-900 mr-12 rounded-lg"
+          className="flex justify-items-center px-5 py-2 font-bold text-lg align-items-center text-white bg-rose-600 btn-bg-hover-rose-900 mr-12 rounded-lg"
         >
           LOGIN
         </Link>
