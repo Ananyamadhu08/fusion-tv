@@ -75,7 +75,7 @@ const VideoPage = () => {
   return (
     <>
       <section className="videoPage__container">
-        <div className="row h-full">
+        <div className="row h-full my-5">
           <div className="col-9-lg col-12-sm  p-2 text-white">
             <div className="videoPage__video">
               <ReactPlayer
@@ -173,9 +173,6 @@ const VideoPage = () => {
             {/* notes */}
           </div>
         </div>
-        <div className="spacer-3rem"></div>
-        <div className="spacer-3rem"></div>
-        <div className="spacer-3rem"></div>
         <div className="spacer-3rem"></div>
         <div className="spacer-3rem"></div>
       </section>
