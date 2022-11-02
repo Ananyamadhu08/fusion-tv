@@ -81,7 +81,7 @@ const HistoryPageCard = ({ video }) => {
                       historyDispatch,
                       showToast
                     )
-                  : showToast("Please login first!", "error")
+                  : showToast("Please login first", "error")
               }
               style={{ border: 0 }}
               className=" p-2 px-5 bg-rose-500 rounded-sm"
@@ -89,10 +89,6 @@ const HistoryPageCard = ({ video }) => {
               {" "}
               remove from history
             </button>
-            {/* <button className="btn btn-solid-amber shadow-lg text-white">
-              {" "}
-              remove watch later
-            </button> */}
 
             <div>
               {isInWatchLater ? (
@@ -105,7 +101,7 @@ const HistoryPageCard = ({ video }) => {
                           watchLaterDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
                   className="text-2xl text-hover-rose-500  cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
@@ -119,7 +115,7 @@ const HistoryPageCard = ({ video }) => {
                           watchLaterDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
                   className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
@@ -134,7 +130,7 @@ const HistoryPageCard = ({ video }) => {
                           likedVideosDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
                   className="text-2xl text-hover-rose-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>
@@ -148,7 +144,7 @@ const HistoryPageCard = ({ video }) => {
                           likedVideosDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
                   className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
                 ></i>

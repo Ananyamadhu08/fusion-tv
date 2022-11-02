@@ -51,12 +51,7 @@ const VideoPage = () => {
     likedVideosDispatch,
   } = useLikedVideos();
 
-  const {
-    historyState: { history },
-    historyDispatch,
-  } = useHistory();
-
-  console.log(historyDispatch, history);
+  const { historyDispatch } = useHistory();
 
   const categoryImage = getCategoryImg(
     currentVideoDetails.category,

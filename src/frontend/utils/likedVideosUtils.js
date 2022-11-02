@@ -56,7 +56,7 @@ export const addVideoToLikedVideos = async (
         payload: likes,
       });
 
-      showToast("Added video to liked videos success!", "success");
+      showToast("Added video to liked videos", "success");
     }
   } catch (error) {
     likedVideosDispatch({
@@ -88,7 +88,7 @@ export const removeVideoFromLikedVideos = async (
         payload: likes,
       });
 
-      showToast("Remove video from liked videos success!", "success");
+      showToast("Removed video from liked videos", "success");
     }
   } catch (error) {
     likedVideosDispatch({

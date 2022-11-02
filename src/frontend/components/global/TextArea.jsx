@@ -13,7 +13,7 @@ const TextArea = ({ value, onChange, label, errorMessage, ...rest }) => {
         onChange={onChange}
         {...rest}
       />
-      <label for="email" className="input-label text-grey-700 bg-white">
+      <label htmlFor="email" className="input-label text-grey-700 bg-white">
         {label}
       </label>
 

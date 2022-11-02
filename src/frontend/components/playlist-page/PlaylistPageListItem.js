@@ -33,7 +33,7 @@ const PlaylistPageListItem = ({
     }
 
     if (!encodedToken) {
-      showToast("Please login first!", "error");
+      showToast("Please login first", "error");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addedToPlaylist, encodedToken, playlistDispatch, playlistId, video]);

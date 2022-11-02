@@ -83,7 +83,7 @@ const LikedVideoCard = ({ video }) => {
                           watchLaterDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
                   className="text-2xl text-rose-500 text-rose  cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
@@ -97,7 +97,7 @@ const LikedVideoCard = ({ video }) => {
                           watchLaterDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
                   className="text-2xl text-white text-hover-rose-500 text-white cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
@@ -112,7 +112,7 @@ const LikedVideoCard = ({ video }) => {
                           likedVideosDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
                   className="text-2xl text-rose-500 text-white  cursor-pointer  mr-3 fas fa-heart"
                 ></i>
@@ -126,7 +126,7 @@ const LikedVideoCard = ({ video }) => {
                           likedVideosDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
                   className="text-2xl text-white text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart"
                 ></i>

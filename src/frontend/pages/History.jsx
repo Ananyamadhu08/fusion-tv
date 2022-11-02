@@ -24,7 +24,7 @@ const History = () => {
             onClick={() =>
               deleteAllHistory(encodedToken, historyDispatch, showToast)
             }
-            className="bg-rose-500 shadow-lg text-white mt-7 text-xl px-5 py-2 rounded-lg mb-10"
+            className="bg-rose-500 shadow-lg text-white mt-7 text-xl px-5 py-2 rounded-lg mb-10 cursor-pointer"
             style={{ border: 0 }}
           >
             clear history

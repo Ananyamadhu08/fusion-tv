@@ -21,8 +21,6 @@ export const getAllPlaylists = async (token, playlistDispatch, showToast) => {
         type: playlistActions.GET_ALL_PLAYLISTS,
         payload: playlists,
       });
-
-      showToast("Get all videos from playlist success!", "success");
     }
   } catch (error) {
     playlistDispatch({

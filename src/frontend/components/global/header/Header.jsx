@@ -14,7 +14,7 @@ function Header() {
               className="flex align-items-center"
               style={{ gap: "0.5rem" }}
             >
-              <i class="fa-solid fa-video text-3xl text-white"></i>
+              <i className="fa-solid fa-video text-3xl text-white"></i>
               <h5 className=" cursor-pointer mr-16 text-white  text-xl text-italic">
                 <span className="text-rose-500 text-4xl">Fusion</span>Tv
               </h5>
