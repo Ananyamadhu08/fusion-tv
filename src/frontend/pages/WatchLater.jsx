@@ -26,7 +26,7 @@ const WatchLater = () => {
         <div className="flex flex-col align-items-center gap-10">
           <h2 className="text-white text-center">no watch later</h2>
           <img
-            src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1653799091/fusionTv/fusionTv_oyjpu4.gif"
+            src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1667402462/fusionTv/fusion-tv_aunm1g.gif"
             alt="computer"
             className="loader-img"
           />
