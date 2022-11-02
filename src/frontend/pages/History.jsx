@@ -20,15 +20,14 @@ const History = () => {
     <div className="historyPage_container">
       <div className="flex justify-center">
         {history.length > 0 && (
-          <button
+          <div
             onClick={() =>
               deleteAllHistory(encodedToken, historyDispatch, showToast)
             }
-            className="bg-rose-500 shadow-lg text-white mt-7 text-xl px-5 py-2 rounded-lg mb-10 cursor-pointer"
-            style={{ border: 0 }}
+            className="bg-rose-700 bg-hover-rose-900 text-white font-bold w-fit px-4 py-2 text-xl m-10 rounded-lg cursor-pointer border-transparent"
           >
-            clear history
-          </button>
+            Clear History
+          </div>
         )}
       </div>
       <div className="flex justify-center">

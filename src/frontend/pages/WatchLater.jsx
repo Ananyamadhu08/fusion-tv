@@ -9,27 +9,38 @@ const WatchLater = () => {
 
   return (
     <div className="likedVideos__container">
-      <div className="spacer-3rem"></div>
-      <div className="spacer-3rem"></div>
-      {/* <div className="spacer-3rem"></div> */}
-
-      <div className="flex justify-center">
-        <div className="likedVideos__main">
-          {watchLater &&
-            watchLater.map((video) => (
-              <LikedVideoCard video={video} key={video._id} />
-            ))}
+      {watchLater.length === 0 ? (
+        <div>
+          <div className="spacer-3rem"></div>
+          <div className="spacer-3rem"></div>
+          <div className="flex flex-col align-items-center gap-10">
+            <h2 className="text-white text-center">no watch later</h2>
+            <img
+              src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1667402462/fusionTv/fusion-tv_aunm1g.gif"
+              alt="computer"
+              className="loader-img"
+            />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div>
+          <div className="flex justify-center">
+            <div
+              className="bg-rose-700 text-white font-bold w-fit px-4 py-2 text-xl m-10 rounded-lg"
+              style={{ textAlign: "center" }}
+            >
+              Watch Later
+            </div>
+          </div>
 
-      {watchLater.length === 0 && (
-        <div className="flex flex-col align-items-center gap-10">
-          <h2 className="text-white text-center">no watch later</h2>
-          <img
-            src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1667402462/fusionTv/fusion-tv_aunm1g.gif"
-            alt="computer"
-            className="loader-img"
-          />
+          <div className="flex justify-center">
+            <div className="likedVideos__main">
+              {watchLater &&
+                watchLater.map((video) => (
+                  <LikedVideoCard video={video} key={video._id} />
+                ))}
+            </div>
+          </div>
         </div>
       )}
 
