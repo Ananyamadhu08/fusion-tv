@@ -49,16 +49,16 @@ export const videos = [
   {
     _id: "B6uuIHpFkuo",
     title: "Purl | Pixar SparkShorts",
-    img: "https://i.ytimg.com/an_webp/B6uuIHpFkuo/mqdefault_6s.webp?du=3000&sqp=CIy78ZIG&rs=AOn4CLDzjD_qKaC2bgejl-jj-hRC11VDfw",
+    img: "https://media.glamour.com/photos/5c61dd978ba0e1205e6e493f/master/pass/Dyp8cYsWoAEyG_y.jpg",
     category: "Pixar",
     desc: "Purl, directed by Kristen Lester and produced by Gillian Libbert-Duncan, features an earnest ball of yarn named Purl who gets a job in a fast-paced, high energy, bro-tastic start-up. Yarny hijinks ensue as she tries to fit in, but how far is she willing to go to get the acceptance she yearns for, and in the end, is it worth it?",
   },
   {
-    _id: "gpBt5STusE",
-    title: "Miguel Sings Remember Me to Coco | Off the Page by Disney Pixar",
-    img: "https://i.ytimg.com/vi/vgpBt5STusE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBhJrOvWJckPKGA1FYuT89oDt3fRA",
+    _id: "A4-G7YpSFb4",
+    title: "Smash and Grab | Pixar SparkShorts",
+    img: "https://i.ytimg.com/vi/A4-G7YpSFb4/maxresdefault.jpg",
     category: "Pixar",
-    desc: "Sit back and let the words fly off the page. After returning to the Land of the Living, Miguel sings Remember Me to Mamá Coco.",
+    desc: "Story of Two antiquated robots who risk everything for freedom and for each other after years of toiling away inside the engine room of a towering locomotive.",
   },
   {
     _id: "AZS5cgybKcI",
@@ -119,7 +119,7 @@ export const videos = [
   {
     _id: "TyHcqX2lQWI",
     title: "Star Wars: The Clone Wars | The Phantom Apprentice Clip | Disney+",
-    img: "https://i.ytimg.com/an_webp/ZLW2jkd6E7g/mqdefault_6s.webp?du=3000&sqp=CLDN8ZIG&rs=AOn4CLC5A6AD5YDVCdZRoxC8WyPg_urFtg",
+    img: "https://lumiere-a.akamaihd.net/v1/images/anm-ff-001634_7e13ea7a.jpeg?region=361%2C253%2C2700%2C1519",
     category: "Star Wars",
     desc: "Ahsoka leads Republic clones to confront Maul’s forces on Mandalore, while Maul senses the impending chaos and makes a calculated play to ensure his own survival in “The Phantom Apprentice,” an all-new episode of Star Wars: The Clone Wars this Friday, April 24th.",
   },
@@ -161,14 +161,14 @@ export const videos = [
   {
     _id: "AT3fCgxEAJE",
     title: "How Tutankhamun Got His Gold | Lost Treasures of Egypt",
-    img: "https://i.ytimg.com/an_webp/AT3fCgxEAJE/mqdefault_6s.webp?du=3000&sqp=CJPU8ZIG&rs=AOn4CLCXajm4qby_PbmojXCaUT3GDNW4Dg",
+    img: "https://i.ytimg.com/vi/AT3fCgxEAJE/maxresdefault.jpg",
     category: "Nat Geo",
     desc: "An immersive, action-packed and discovery-led series following International teams of Egyptologists as they unearth the world's richest seam of ancient archaeology - Egypt's Valley of the Kings. For a full season of excavations and with unprecedented access to the teams on the front line of archaeology, we follow these modern-day explorers as they battle searing heat and inhospitable terrain to make the discoveries of a lifetime.",
   },
   {
     _id: "se2Fn-y3B6A",
     title: "Land of Ice and Snow | Wild Nordic",
-    img: "https://i.ytimg.com/an_webp/se2Fn-y3B6A/mqdefault_6s.webp?du=3000&sqp=CODu8ZIG&rs=AOn4CLAt2N8kAthkqoJreokna_yTdHmDsg",
+    img: "https://i.ytimg.com/vi/se2Fn-y3B6A/maxresdefault.jpg",
     category: "Nat Geo",
     desc: "As seen by the Viking gods, the fabled wildernesses of Norway, Finland and Sweden are revealed from the skies above.",
   },
@@ -189,7 +189,7 @@ export const videos = [
   {
     _id: "6ZfuNTqbHE8",
     title: "Marvel Studios Avengers: Infinity War Official Trailer",
-    img: "https://i.ytimg.com/an_webp/6ZfuNTqbHE8/mqdefault_6s.webp?du=3000&sqp=CJ7X8ZIG&rs=AOn4CLDUjIoG3shhmbTaprfFBfi5l83rDQ",
+    img: "https://i.ytimg.com/vi/6ZfuNTqbHE8/maxresdefault.jpg",
     category: "Marvel",
     desc: "Marvel Studios Avengers: Infinity War In theaters April 27.",
   },
@@ -211,7 +211,7 @@ export const videos = [
     _id: "aWzlQ2N6qqg",
     title:
       "Marvel Studios' Doctor Strange in the Multiverse of Madness | Official Trailer",
-    img: "https://i.ytimg.com/an_webp/aWzlQ2N6qqg/mqdefault_6s.webp?du=3000&sqp=CJiw8ZIG&rs=AOn4CLAwwaA1z5eNn_7ua8uH1GUTNBawMg",
+    img: "https://i.ytimg.com/vi/aWzlQ2N6qqg/maxresdefault.jpg",
     category: "Marvel",
     desc: "In Marvel Studios Doctor Strange in the Multiverse of Madness, the MCU unlocks the Multiverse and pushes its boundaries further than ever before. Journey into the unknown with Doctor Strange, who, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.",
   },
