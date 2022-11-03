@@ -40,7 +40,7 @@ function SignupForm() {
             Sign Up
           </h3>
 
-          <div className="input-container mb-7 text-rose-200">
+          <div className="input-container mb-7 text-white">
             <input
               name="firstName"
               type="text"
@@ -59,7 +59,7 @@ function SignupForm() {
             </label>
           </div>
 
-          <div className="input-container mb-7 text-rose-200">
+          <div className="input-container mb-7 text-white">
             <input
               name="lastName"
               type="text"
@@ -78,7 +78,7 @@ function SignupForm() {
             </label>
           </div>
 
-          <div className="input-container mb-7 text-rose-200">
+          <div className="input-container mb-7 text-white">
             <input
               name="email"
               type="text"
@@ -97,7 +97,7 @@ function SignupForm() {
             </label>
           </div>
 
-          <div className="input-container mb-7 text-rose-200">
+          <div className="input-container mb-7 text-white">
             <input
               name="password"
               type="text"
@@ -110,13 +110,13 @@ function SignupForm() {
             />
             <label
               htmlFor="password"
-              className="input-label  text-white bg-slate-900"
+              className="input-label text-white bg-slate-900"
             >
               Password
             </label>
           </div>
 
-          <div className="flex justify-between mb-10">
+          <div className="flex justify-between mb-7">
             <Link
               to=""
               className="btn btn-text-underline text-white text-hover-rose-500"
@@ -132,7 +132,7 @@ function SignupForm() {
           </div>
 
           <div className="flex">
-            <div className="m-auto flex flex-col" style={{ gap: "1.5rem" }}>
+            <div className="m-auto flex flex-col" style={{ gap: "1rem" }}>
               <button
                 type="submit"
                 onClick={(e) => {
@@ -147,7 +147,7 @@ function SignupForm() {
 
                   setUserData(intUserData);
                 }}
-                className="px-4 py-1 text-lg bg-slate-700 rounded text-white w-full bg-hover-rose-800 text-hover-rose-200 border-transparent cusor-pointer"
+                className="px-4 py-1 text-lg bg-slate-700 rounded text-white w-full bg-hover-rose-800 text-hover-rose-200 border-transparent cursor-pointer"
               >
                 sign up
               </button>
@@ -176,7 +176,7 @@ function SignupForm() {
 
                   setUserData(intUserData);
                 }}
-                className="px-4 w-full py-1 text-lg bg-slate-700 rounded text-white bg-hover-rose-800 text-hover-rose-200 border-transparent cusor-pointer"
+                className="px-4 w-full py-1 text-lg bg-slate-700 rounded text-white bg-hover-rose-800 text-hover-rose-200 border-transparent cursor-pointer"
               >
                 sign up with test credentials
               </button>
