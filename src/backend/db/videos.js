@@ -215,4 +215,18 @@ export const videos = [
     category: "Nat Geo",
     desc: "As seen by the Viking gods, the fabled wildernesses of Norway, Finland and Sweden are revealed from the skies above.",
   },
+  {
+    _id: "ZlNFpri-Y40",
+    title: "Ant-Man and The Wasp: Quantumania | Official Trailer",
+    img: "https://i.ytimg.com/vi/ZlNFpri-Y40/maxresdefault.jpg",
+    category: "Marvel",
+    desc: "Watch the brand-new trailer for Marvel Studios Ant-Man and The Wasp: Quantumania",
+  },
+  {
+    _id: "BwZs3H_UN3k",
+    title: "Lightyear | Official Trailer",
+    img: "https://m.media-amazon.com/images/I/811hpX9Jh0L.jpg",
+    category: "Pixar",
+    desc: "Every hero has a beginning. Go on an intergalactic adventure with Disney and Pixar’s Lightyear ",
+  },
 ];
