@@ -69,7 +69,7 @@ const VideoPage = () => {
 
   return (
     <>
-      <section className="videoPage__container">
+      <section className="videoPage__container bg-slate-800">
         <div className="row h-full my-5">
           <div className="col-9-lg col-12-sm  p-2 text-white">
             <div className="videoPage__video">
@@ -146,7 +146,7 @@ const VideoPage = () => {
                         showToast
                       )
                     }
-                    className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                    className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-heart"
                   ></i>
                 ) : (
                   <i
@@ -158,7 +158,7 @@ const VideoPage = () => {
                         showToast
                       )
                     }
-                    className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                    className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart"
                   ></i>
                 )}
               </div>
