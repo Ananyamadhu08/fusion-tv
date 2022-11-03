@@ -7,10 +7,6 @@ const Home = () => {
       <div className="spacer-3rem"></div>
       <HeroBanner />
       <FeaturedCategories />
-
-      <div className="spacer-3rem"></div>
-      <div className="spacer-3rem"></div>
-      <div className="spacer-3rem"></div>
     </div>
   );
 };

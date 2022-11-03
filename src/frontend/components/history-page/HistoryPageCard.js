@@ -71,8 +71,8 @@ const HistoryPageCard = ({ video }) => {
 
           <p> {video.desc} </p>
 
-          <div className="videoCard__actions flex justify-between align-items-center mt-3">
-            <button
+          <div className="videoCard__actions flex justify-between align-items-center mt-4">
+            <div
               onClick={() =>
                 encodedToken
                   ? removeVideoFromHistory(
@@ -81,18 +81,13 @@ const HistoryPageCard = ({ video }) => {
                       historyDispatch,
                       showToast
                     )
-                  : showToast("Please login first!", "error")
+                  : showToast("Please login first", "error")
               }
               style={{ border: 0 }}
-              className=" p-2 px-5 bg-rose-500 rounded-sm"
+              className="px-2 cursor-pointer"
             >
-              {" "}
-              remove from history
-            </button>
-            {/* <button className="btn btn-solid-amber shadow-lg text-white">
-              {" "}
-              remove watch later
-            </button> */}
+              <i className="fa-solid fa-trash-can text-2xl text-hover-rose-500" />
+            </div>
 
             <div>
               {isInWatchLater ? (
@@ -105,9 +100,9 @@ const HistoryPageCard = ({ video }) => {
                           watchLaterDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
-                  className="text-2xl text-hover-rose-500  cursor-pointer  mr-3 fa-solid fa-clock"
+                  className="text-2xl text-rose-500 cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
               ) : (
                 <i
@@ -119,7 +114,7 @@ const HistoryPageCard = ({ video }) => {
                           watchLaterDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
                   className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-clock"
                 ></i>
@@ -134,9 +129,9 @@ const HistoryPageCard = ({ video }) => {
                           likedVideosDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
-                  className="text-2xl text-hover-rose-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                  className="text-2xl text-rose-500 cursor-pointer  mr-3 fa-solid fa-heart"
                 ></i>
               ) : (
                 <i
@@ -148,9 +143,9 @@ const HistoryPageCard = ({ video }) => {
                           likedVideosDispatch,
                           showToast
                         )
-                      : showToast("Please login first!", "error")
+                      : showToast("Please login first", "error")
                   }
-                  className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                  className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-solid fa-heart"
                 ></i>
               )}
             </div>

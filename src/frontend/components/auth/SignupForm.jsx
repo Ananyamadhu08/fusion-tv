@@ -29,18 +29,18 @@ function SignupForm() {
   return (
     <form
       className="relative w-full"
-      style={{ bottom: "4.2rem", minHeight: "100vh" }}
+      style={{ bottom: "4rem", minHeight: "100vh" }}
     >
       <div className="h-screen flex justify-center">
         <div
           style={{ margin: "auto" }}
           className="h=96 w-96 p-7 shadow-2xl rounded-2xl bg-slate-900"
         >
-          <h3 className="text-3xl font-normal text-center text-white mb-12">
+          <h3 className="text-3xl font-normal text-center text-white mb-8">
             Sign Up
           </h3>
 
-          <div className="input-container mb-7 text-rose-200">
+          <div className="input-container mb-7 text-white">
             <input
               name="firstName"
               type="text"
@@ -59,7 +59,7 @@ function SignupForm() {
             </label>
           </div>
 
-          <div className="input-container mb-7 text-rose-200">
+          <div className="input-container mb-7 text-white">
             <input
               name="lastName"
               type="text"
@@ -78,7 +78,7 @@ function SignupForm() {
             </label>
           </div>
 
-          <div className="input-container mb-7 text-rose-200">
+          <div className="input-container mb-7 text-white">
             <input
               name="email"
               type="text"
@@ -97,7 +97,7 @@ function SignupForm() {
             </label>
           </div>
 
-          <div className="input-container mb-7 text-rose-200">
+          <div className="input-container mb-7 text-white">
             <input
               name="password"
               type="text"
@@ -110,29 +110,29 @@ function SignupForm() {
             />
             <label
               htmlFor="password"
-              className="input-label  text-white bg-slate-900"
+              className="input-label text-white bg-slate-900"
             >
               Password
             </label>
           </div>
 
-          <div className="flex justify-between mb-10">
+          <div className="flex justify-between mb-7">
             <Link
               to=""
-              className="btn btn-text-underline text-lg text-white text-hover-rose-800"
+              className="btn btn-text-underline text-white text-hover-rose-500"
             >
               Forgot Password
             </Link>
             <Link
               to="/login"
-              className="btn btn-text-underline text-lg text-white text-hover-rose-800"
+              className="btn btn-text-underline text-white text-hover-rose-500"
             >
               Login
             </Link>
           </div>
 
           <div className="flex">
-            <div className="m-auto flex flex-col" style={{ gap: "1.5rem" }}>
+            <div className="m-auto flex flex-col" style={{ gap: "1rem" }}>
               <button
                 type="submit"
                 onClick={(e) => {
@@ -147,7 +147,7 @@ function SignupForm() {
 
                   setUserData(intUserData);
                 }}
-                className="px-4 py-1 text-lg bg-slate-700 rounded text-white w-full bg-hover-rose-800 text-hover-rose-200"
+                className="px-4 py-1 text-lg bg-slate-700 rounded text-white w-full bg-hover-rose-800 text-hover-rose-200 border-transparent cursor-pointer"
               >
                 sign up
               </button>
@@ -176,7 +176,7 @@ function SignupForm() {
 
                   setUserData(intUserData);
                 }}
-                className="px-4 w-full py-1 text-lg bg-slate-700 rounded text-white bg-hover-rose-800 text-hover-rose-200"
+                className="px-4 w-full py-1 text-lg bg-slate-700 rounded text-white bg-hover-rose-800 text-hover-rose-200 border-transparent cursor-pointer"
               >
                 sign up with test credentials
               </button>

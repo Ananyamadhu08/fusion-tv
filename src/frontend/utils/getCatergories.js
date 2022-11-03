@@ -15,8 +15,6 @@ export const getCategories = async (categoryDispatch, showToast) => {
         type: categoryActions.GET_CATEGORY,
         payload: categories,
       });
-
-      showToast("Get all categories success!", "success");
     }
   } catch (error) {
     categoryDispatch({ type: categoryActions.ERROR, payload: error });

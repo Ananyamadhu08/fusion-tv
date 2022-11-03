@@ -20,15 +20,14 @@ const History = () => {
     <div className="historyPage_container">
       <div className="flex justify-center">
         {history.length > 0 && (
-          <button
+          <div
             onClick={() =>
               deleteAllHistory(encodedToken, historyDispatch, showToast)
             }
-            className="bg-rose-500 shadow-lg text-white mt-7 text-xl px-5 py-2 rounded-lg mb-10"
-            style={{ border: 0 }}
+            className="bg-rose-700 bg-hover-rose-900 text-white font-bold w-fit px-4 py-2 text-xl m-10 rounded-lg cursor-pointer border-transparent"
           >
-            clear history
-          </button>
+            Clear History
+          </div>
         )}
       </div>
       <div className="flex justify-center">
@@ -44,20 +43,23 @@ const History = () => {
       </div>
 
       {history.length === 0 && (
-        <div className="flex flex-col align-items-center gap-10">
-          <div className="p-4"></div>
-          <h2 className="text-white text-center">no history</h2>
-          <img
-            src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1653799091/fusionTv/fusionTv_oyjpu4.gif"
-            alt="computer"
-            className="loader-img"
-          />
+        <div>
+          <div className="p-1"></div>
+          <div className="flex flex-col align-items-center gap-10">
+            <div></div>
+            <h2 className="text-white text-center">No History</h2>
+            <img
+              src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1667436026/fusionTv/fusiontv-800_hpysfl.gif"
+              alt="computer"
+              className="loader-img"
+            />
+          </div>
         </div>
       )}
 
       <div className="spacer-3rem"></div>
       <div className="spacer-3rem"></div>
-      <div className="spacer-3rem"></div>
+      <div className="p-4"></div>
     </div>
   );
 };

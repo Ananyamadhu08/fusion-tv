@@ -20,8 +20,6 @@ export const getAllHistory = async (token, historyDispatch, showToast) => {
         type: historyActions.GET_ALL_HISTORY,
         payload: history,
       });
-
-      showToast("Get all history videos success!", "success");
     }
   } catch (error) {
     historyDispatch({
@@ -48,7 +46,7 @@ export const deleteAllHistory = async (token, historyDispatch, showToast) => {
         payload: history,
       });
 
-      showToast("Delete all history videos success!", "success");
+      showToast("Deleted history", "success");
     }
   } catch (error) {
     historyDispatch({
@@ -79,8 +77,6 @@ export const addVideoToHistory = async (
         type: historyActions.ADD_VIDEO_TO_HISTORY,
         payload: history,
       });
-
-      showToast("Added video to history success!", "success");
     }
   } catch (error) {
     historyDispatch({
@@ -112,7 +108,7 @@ export const removeVideoFromHistory = async (
         payload: history,
       });
 
-      showToast("Remove video from history success!", "success");
+      showToast("Removed video from history", "success");
     }
   } catch (error) {
     historyDispatch({

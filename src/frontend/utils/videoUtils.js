@@ -15,8 +15,6 @@ export const getVideos = async (videosDispatch, showToast) => {
         type: videoActions.GET_VIDEOS_SUCCESS,
         payload: videos,
       });
-
-      showToast("Get all videos success!", "success");
     }
   } catch (error) {
     videosDispatch({

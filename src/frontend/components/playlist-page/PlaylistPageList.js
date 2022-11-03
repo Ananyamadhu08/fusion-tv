@@ -14,14 +14,13 @@ const PlaylistPageList = ({ selectedPlaylist, setSelectedPlaylist }) => {
   return (
     <>
       <ul className="flex flex-col">
-        <li className="text-white pt-3 pb-3 font-semibold text-2xl flex align-items-center justify-between mb-8">
-          <span className="text-underline">Playlists</span>
+        <li className="text-white px-3 rounded-lg font-semibold text-2xl flex align-items-center justify-between mb-8 mt-5">
+          <span>Playlists</span>
           <button
             onClick={() => setShowModal(true)}
-            className="ml-5 mt-3  bg-rose-500 shadow-lg text-white px-3 py-1 text-lg rounded-xl cursor-pointer"
-            style={{ border: 0 }}
+            className="border-transparent bg-slate-800"
           >
-            create playlist
+            <i className="fa-solid fa-circle-plus text-2xl text-hover-rose-500 cursor-pointer" />
           </button>
         </li>
 
@@ -37,18 +36,11 @@ const PlaylistPageList = ({ selectedPlaylist, setSelectedPlaylist }) => {
               />
             ))}
 
-          {/* {playlists.length === 0 && (
-            <h4 className="text-md text-white">
-              {" "}
-              No playlists, create one please
-            </h4>
-          )} */}
-
           {playlists.length === 0 && (
             <div className="flex flex-col align-items-center gap-10">
-              <h2 className="text-white text-center">no playlists</h2>
+              <h2 className="text-white text-center">No Playlists</h2>
               <img
-                src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1653799091/fusionTv/fusionTv_oyjpu4.gif"
+                src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1667436026/fusionTv/fusiontv-800_hpysfl.gif"
                 alt="computer"
                 className="loader-img"
               />

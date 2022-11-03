@@ -9,10 +9,7 @@ const FeaturedCategories = () => {
   } = useCategory();
 
   return (
-    <div
-      className="featuredCategories__container relative"
-      style={{ bottom: "10rem" }}
-    >
+    <div className="featuredCategories__container relative mx-8">
       {categories &&
         categories.map((category, i) => (
           <CategoryCard category={category} key={i} />

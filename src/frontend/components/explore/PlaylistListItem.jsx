@@ -80,7 +80,7 @@ function PlaylistListItem({ playlistName, playlistId, video }) {
                 playlistDispatch,
                 showToast
               )
-            : showToast("Please login first!", "error")
+            : showToast("Please login first", "error")
         }
         className="fa-solid fa-trash-can text-rose-800 ml-3 text-hover-slate-500 cursor-pointer"
       ></i>

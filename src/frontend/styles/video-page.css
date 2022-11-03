@@ -3,21 +3,16 @@
   min-height: 100vh;
   overflow-x: hidden;
   display: block;
-  top: 7rem;
+  top: 6rem;
   padding: 1rem;
 }
 
 .videoPage__container::after {
   background: var(--slate-800);
-
-  content: "";
   position: absolute;
   inset: 0px;
   opacity: 1;
   z-index: -1;
-}
-
-.videoPage__main {
 }
 
 .videoPage__video {
@@ -51,9 +46,6 @@
   margin-top: 2rem;
 }
 
-.videoPage__notes {
-}
-
 /* --------------- */
 
 .playlistPage__container {
@@ -61,7 +53,7 @@
   min-height: 100vh;
   overflow-x: hidden;
   display: block;
-  top: 7rem;
+  top: 5.5rem;
   padding: 1rem;
 }
 

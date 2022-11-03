@@ -51,12 +51,7 @@ const VideoPage = () => {
     likedVideosDispatch,
   } = useLikedVideos();
 
-  const {
-    historyState: { history },
-    historyDispatch,
-  } = useHistory();
-
-  console.log(historyDispatch, history);
+  const { historyDispatch } = useHistory();
 
   const categoryImage = getCategoryImg(
     currentVideoDetails.category,
@@ -74,8 +69,8 @@ const VideoPage = () => {
 
   return (
     <>
-      <section className="videoPage__container">
-        <div className="row h-full">
+      <section className="videoPage__container bg-slate-800">
+        <div className="row h-full my-5">
           <div className="col-9-lg col-12-sm  p-2 text-white">
             <div className="videoPage__video">
               <ReactPlayer
@@ -151,7 +146,7 @@ const VideoPage = () => {
                         showToast
                       )
                     }
-                    className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                    className="text-2xl text-rose-500  cursor-pointer  mr-3 fa-solid fa-heart"
                   ></i>
                 ) : (
                   <i
@@ -163,7 +158,7 @@ const VideoPage = () => {
                         showToast
                       )
                     }
-                    className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart-circle-bolt"
+                    className="text-2xl text-hover-rose-500 cursor-pointer  mr-3 fa-solid fa-heart"
                   ></i>
                 )}
               </div>
@@ -173,9 +168,6 @@ const VideoPage = () => {
             {/* notes */}
           </div>
         </div>
-        <div className="spacer-3rem"></div>
-        <div className="spacer-3rem"></div>
-        <div className="spacer-3rem"></div>
         <div className="spacer-3rem"></div>
         <div className="spacer-3rem"></div>
       </section>

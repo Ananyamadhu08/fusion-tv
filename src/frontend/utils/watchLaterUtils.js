@@ -23,8 +23,6 @@ export const getAllWatchLaterVideos = async (
         type: watchLaterActions.GET_ALL_WATCH_LATER_VIDEOS,
         payload: watchlater,
       });
-
-      showToast("Get all watch later success!", "success");
     }
   } catch (error) {
     watchLaterDispatch({
@@ -56,7 +54,7 @@ export const addVideoToWatchLater = async (
         payload: watchlater,
       });
 
-      showToast("Added video to watch later success!", "success");
+      showToast("Added video to watch later", "success");
     }
   } catch (error) {
     watchLaterDispatch({
@@ -88,7 +86,7 @@ export const removeVideoToWatchLater = async (
         payload: watchlater,
       });
 
-      showToast("Remove video from watch later success!", "success");
+      showToast("Removed video from watch later", "success");
     }
   } catch (error) {
     watchLaterDispatch({

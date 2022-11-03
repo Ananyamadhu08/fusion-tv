@@ -28,8 +28,6 @@ export const WatchLaterProvider = ({ children }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(watchLaterState);
-
   return (
     <WatchLaterContext.Provider value={{ watchLaterState, watchLaterDispatch }}>
       {children}

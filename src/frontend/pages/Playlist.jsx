@@ -13,14 +13,12 @@ const Playlists = () => {
     selectedPlaylist !== null &&
     playlists.find((playlist) => playlist.title === selectedPlaylist);
 
-  console.log(videosInPlaylist);
-
   return (
     <div className="playlistPage__container">
       <div className="h-full w-full">
         <div className="row h-full flex justify-center">
           {/* create playlist */}
-          <div className="col-3-lg col-12-sm  p-2 text-white h-full w-full">
+          <div className="col-4-lg col-12-xs p-2 text-white h-full w-full">
             <PlaylistPageList
               selectedPlaylist={selectedPlaylist}
               setSelectedPlaylist={setSelectedPlaylist}
@@ -45,7 +43,7 @@ const Playlists = () => {
       </div>
       <div className="spacer-3rem"></div>
       <div className="spacer-3rem"></div>
-      <div className="spacer-3rem mb-7"></div>
+      <div className="p-1"></div>
     </div>
   );
 };
