@@ -43,14 +43,17 @@ const History = () => {
       </div>
 
       {history.length === 0 && (
-        <div className="flex flex-col align-items-center gap-10">
-          <div className="p-4"></div>
-          <h2 className="text-white text-center">no history</h2>
-          <img
-            src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1667402462/fusionTv/fusion-tv_aunm1g.gif"
-            alt="computer"
-            className="loader-img"
-          />
+        <div>
+          <div className="p-1"></div>
+          <div className="flex flex-col align-items-center gap-10">
+            <div></div>
+            <h2 className="text-white text-center">No History</h2>
+            <img
+              src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1667436026/fusionTv/fusiontv-800_hpysfl.gif"
+              alt="computer"
+              className="loader-img"
+            />
+          </div>
         </div>
       )}
 

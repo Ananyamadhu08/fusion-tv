@@ -12,11 +12,10 @@ const WatchLater = () => {
       {watchLater.length === 0 ? (
         <div>
           <div className="spacer-3rem"></div>
-          <div className="spacer-3rem"></div>
           <div className="flex flex-col align-items-center gap-10">
-            <h2 className="text-white text-center">no watch later</h2>
+            <h2 className="text-white text-center">No Watch Later Videos</h2>
             <img
-              src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1667402462/fusionTv/fusion-tv_aunm1g.gif"
+              src="https://res.cloudinary.com/dgl5z5ozi/image/upload/v1667436026/fusionTv/fusiontv-800_hpysfl.gif"
               alt="computer"
               className="loader-img"
             />
