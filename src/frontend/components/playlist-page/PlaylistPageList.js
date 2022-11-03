@@ -20,7 +20,7 @@ const PlaylistPageList = ({ selectedPlaylist, setSelectedPlaylist }) => {
             onClick={() => setShowModal(true)}
             className="border-transparent bg-slate-800"
           >
-            <i className="fa-solid fa-circle-plus text-2xl text-hover-rose-500" />
+            <i className="fa-solid fa-circle-plus text-2xl text-hover-rose-500 cursor-pointer" />
           </button>
         </li>
 
